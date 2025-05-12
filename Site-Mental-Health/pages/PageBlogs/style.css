@@ -1,0 +1,171 @@
+body {
+    background-color: #2C3E50;  
+    color: #ecf0f1;            
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+
+.cabecalho {
+    background: rgba(35, 47, 62, 0.95);  
+    position: sticky;                   
+    top: 0;                              
+    z-index: 1000;                      
+}
+
+
+.logotipo {
+    font-size: 1.8rem;          
+    font-weight: 700;           
+    color: #fff;                
+    text-decoration: none;      
+}
+
+.logotipo span {
+    background: linear-gradient(90deg, #3498db, #1abc9c);  
+    -webkit-background-clip: text;                        
+    background-clip: text;                                
+    -webkit-text-fill-color: transparent;                 
+}
+
+/* ===== TÍTULOS E TEXTOS ===== */
+h1, h2, h3, .card-title {
+    color: #fff !important;                             
+    text-shadow: 0 4px 12px rgba(26, 188, 156, 0.2);   
+}
+
+/* parágrafos e textos */
+.lead, p, .card-text {
+    color: #d5dbdb !important;   
+}
+
+/* Sobrescreve a classe text-dark do Bootstrap para texto branco (para o tema escuro) */
+.text-dark {
+    color: #fff !important;    
+}
+
+/* Sobrescreve a classe text-secondary do Bootstrap para texto mais claro */
+.text-secondary {
+    color: #bdc3c7 !important;  
+}
+
+
+/* ===== ELEMENTOS DE ESTILO ===== */
+.custom-border-bottom {/* Cria uma borda inferior sutil para separar seções */
+    border-bottom: 2px solid rgba(52, 152, 219, 0.2);
+}
+
+/* Aplica um fundo gradiente sutil para blocos de citação */
+.custom-gradient {
+    background: linear-gradient(90deg, rgba(52, 152, 219, 0.1), rgba(26, 188, 156, 0.1)); /* Gradiente azul para verde-água com baixa opacidade */
+    color: #ecf0f1;  
+}
+
+
+/* ===== CONTÊINER DE IMAGENS ===== */
+.imagem-container {/* Cria efeitos de hover e transição suave para contêineres de imagem */
+    overflow: hidden;                               
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  
+    border-radius: 15px;                            
+}
+
+/* Efeito de elevação e aumento ao passar o mouse */
+.imagem-container:hover {
+    transform: translateY(-5px) scale(1.03);       
+    box-shadow: 0 15px 35px rgba(26, 188, 156, 0.3);  
+}
+
+/* Animação suave para a imagem dentro do contêiner */
+.imagem-container img {
+    transition: transform 0.4s ease;  
+}
+
+/* Efeito de zoom na imagem ao passar o mouse */
+.imagem-container:hover img {
+    transform: scale(1.05);
+}
+
+
+/* ===== LISTA DE BENEFÍCIOS ===== */
+.lista-beneficios li:before {/* Adiciona ícones esse sertinho V */
+    content: "\f00c";          
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 900;           
+    color: #1abc9c;            
+    position: absolute;         
+    left: 0;                  
+}
+/* Estiliza as bordas entre itens da lista */
+.lista-beneficios li {
+    border-color: rgba(255, 255, 255, 0.1) !important;  
+}
+/* Destaca os termos em negrito com cor azul */
+.lista-beneficios li strong {
+    color: #3498db;  
+}
+
+/* ===== CARTÕES DE DICAS ===== */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    background: rgba(255, 255, 255, 0.05);  
+    backdrop-filter: blur(10px);           
+    border-radius: 15px;                   
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    color: #ecf0f1;                       
+}
+
+/* Efeito ao passar o mouse sobre os cartões */
+.card:hover {
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 15px 35px rgba(26, 188, 156, 0.3) !important;  
+    border-color: rgba(52, 152, 219, 0.5);  
+}
+
+/* Cor de fundo dos cartões */
+.card-body {
+    background: rgba(52, 73, 94, 0.3); 
+}
+/* Gradiente dos cabeçalhos dos cartões */
+.custom-header-gradient {
+    background: linear-gradient(135deg, #3498db, #1abc9c); 
+}
+
+/* Círculos com números das dicas */
+.dica-numero {
+    background: rgba(255, 255, 255, 0.2);  
+    width: 36px;                          
+    height: 36px;                       
+    border-radius: 50%;                   
+    display: flex;                       
+    align-items: center;                  
+    justify-content: center;             
+}
+
+/*  estilo do iconi */
+.dica-icone {
+    color: rgba(26, 188, 156, 0.2);      
+    background: rgba(52, 152, 219, 0.05);  
+}
+/* Transição suave do ícone inferior*/
+.dica-icone i {
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+/* Efeito no ícone inferior dos cartão */
+.card:hover .dica-icone i {
+    transform: scale(1.2);               
+    color: rgba(26, 188, 156, 0.6);   
+}
+
+@media (max-width: 767px) {
+    /* Esconde imagem desktop em mobile */
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Esconde imagem mobile em desktop */
+    .mobile-only {
+        display: none !important;
+    }
+}

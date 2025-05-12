@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background: linear-gradient(135deg, #f5f7fa, #eef2f7);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+}
+
+.cabecalho {
+    background: rgba(35, 47, 62, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logotipo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+.logotipo span {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+/* PRINCIPAL */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+.secao-agendamento {
+    width: 100%;
+    max-width: 800px;
+}
+.titulo-agendamento {
+    color: #232F3E;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+.titulo-agendamento::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+}
+.container-agendamento {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+/*Geral dos 3 cartoes*/
+.formulario-agendamento,
+.card-info {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.formulario-agendamento:hover,
+.card-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(52, 152, 219, 0.2);
+    border-color: rgba(52, 152, 219, 0.5);
+}
+.formulario-agendamento {
+    flex: 1;
+    min-width: 300px;
+    padding: 2rem;
+}
+/* Espaçamento entre os campos */
+.grupo-campo {
+    margin-bottom: 20px;
+}
+
+.campo-agendamento {
+    width: 100%;
+    background: #fff;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    padding: 12px 15px;
+    color: #37475A;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Destaque visual, quando usuario clica em algum campo */
+.campo-agendamento:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+/* Botão de Confirmar Agendamento */
+.btn-agendar {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+}
+/* Efeito hover do botão de agendamento */
+.btn-agendar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 188, 156, 0.3);
+}
+
+/* CARDS - posicionando eles na lateral */
+.info-agendamento {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* espaçao padrao, entre os 2 cards pequenos */
+.card-info {
+    padding: 1.5rem;
+}
+/* Espaço entre o 1 e 2 card */
+.card-info:first-child {
+    margin-bottom: 20px;
+}
+.titulo-card {
+    color: #37475A;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+/* Ícones nos títulos dos cards */
+.titulo-card i {
+    margin-right: 10px;
+    color: #3498db;
+}
+.texto-card {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Lista das 5 dicas */
+.dicas-lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Itens individuais da lista de dicas */
+.dicas-lista li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #666;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+/* 
+Remove a borda do último item da lista 
+.dicas-lista li:last-child {
+    border-bottom: none;
+}
+*/
+
+/* Ícones do V da lista*/
+.dicas-lista li i {
+    color: #1abc9c;
+    margin-right: 10px;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 767px) {
+
+    .container-agendamento {
+        flex-direction: column;
+    }
+    .info-agendamento {
+        order: -1;
+    }
+    .titulo-agendamento {
+        font-size: 1.8rem;
+    }
+}

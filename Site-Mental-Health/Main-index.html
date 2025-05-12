@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conecte-se com profissionais de saúde mental e grupos de apoio para melhorar seu bem-estar mental">
+    
+    <title>Mental Health Support Network</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="Css/00-Main.css"> 
+    <link rel="stylesheet" href="css/01-header.css">
+    <link rel="stylesheet" href="css/02-Bloco-1.css">
+    <link rel="stylesheet" href="css/03-Volunteers.css">
+    <link rel="stylesheet" href="css/04-Blog.css">
+    <link rel="stylesheet" href="css/05-Faq.css">
+    <link rel="stylesheet" href="css/06-Contato.css">
+    <link rel="stylesheet" href="css/07-Footer.css">
+
+</head>
+<body>
+    
+    <!-- Modificação do HTML - Parte dos botões no desktop -->
+    <header class="cabecalho">
+        <nav class="navbar">
+            <div class="logotipo">
+                <h1>Mente<span>Positiva</span></h1>
+            </div>
+            
+            <!-- Navegação Desktop -->
+            <div class="desktop-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="lni lni-home"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#voluntarios" class="nav-link">
+                            <i class="lni lni-users"></i>
+                            <span>Voluntários</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">
+                            <i class="lni lni-book"></i>
+                            <span>Blog</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="lni lni-grid-alt"></i>
+                            <span>Páginas</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="pages/DevTeam/index.html" class="dropdown-item">Equipe Dev</a>
+                            <a href="pages/Agendamentos/index.html" class="dropdown-item">Agendamento</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#faq" class="nav-link">
+                            <i class="lni lni-question-circle"></i>
+                            <span>Faq</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#contato" class="nav-link">
+                            <i class="lni lni-envelope"></i>
+                            <span>Contato</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Botões de Login/Signup para Desktop - MODIFICADO -->
+            <div class="desktop-buttons">
+                <div class="container-auth-buttons">
+                    <a href="pages/Login-Signup/login.html" class="auth-btn login-btn">LOGIN</a>
+                    <a href="pages/Login-Signup/cadastro.html" class="auth-btn signup-btn">SIGNUP</a>
+                </div>
+            </div>
+            
+            <!-- Botão Mobile -->
+            <button class="navbar-toggler" id="menu-toggle">
+                <i class="lni lni-menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Overlay para fechar o menu ao clicar fora -->
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Menu Mobile -->
+    <div class="menu-mobile" id="menu-mobile">
+        <div class="menu-mobile-header">
+            <h5 class="menu-title">Menu</h5>
+            <button class="menu-close" id="menu-close">
+                <i class="lni lni-close"></i>
+            </button>
+        </div>
+        
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="lni lni-home"></i>
+                    <span>Início</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="#voluntarios" class="nav-link">
+                    <i class="lni lni-users"></i>
+                    <span>Voluntários</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="#blog" class="nav-link">
+                    <i class="lni lni-book"></i>
+                    <span>Blog</span>
+                </a>
+            </li>
+            
+            <!-- Dropdown no menu mobile -->
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="dropdown-toggle" aria-expanded="false">
+                    <div style="display: flex; align-items: center;">
+                        <i class="lni lni-grid-alt"></i>
+                        <span>Páginas</span>
+                    </div>
+                </a>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="pages/DevTeam/index.html" class="dropdown-item">Equipe Dev</a>
+                    <a href="pages/Agendamentos/index.html" class="dropdown-item">Agendamento</a>
+                </div>
+            </li>
+            
+            <li class="nav-item">
+                <a href="#faq" class="nav-link">
+                    <i class="lni lni-question-circle"></i>
+                    <span>Faq</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="#contato" class="nav-link">
+                    <i class="lni lni-envelope"></i>
+                    <span>Contato</span>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="container-botoes">
+            <a href="pages/Login-Signup/login.html" class="botao-login">LOGIN</a>
+            <a href="pages/Login-Signup/cadastro.html" class="botao-signup">SIGNUP</a>
+        </div>
+    </div>
+
+    <main>
+
+        <section class="secao-principal" id="topo">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- Coluna de texto à esquerda -->
+                    <div class="col-lg-6">
+                        <h1>Bem-vindo à <span class="destaque">MentePositiva</span></h1>
+                        <p>Oferecemos suporte profissional para ajudar você a cuidar da sua saúde mental. Nossa equipe de especialistas está pronta para acompanhar sua jornada de autoconhecimento e bem-estar.</p>
+                        
+                        <div class="botoes-principais">
+                            <a href="pages/Agendamentos/index.html" class="btn btn-primary">
+                                <i class="lni lni-calendar"></i> Agendar Consulta
+                            </a>
+                            <a href="#voluntarios" class="btn btn-outline-primary">
+                                <i class="lni lni-users"></i> Conheça Nossa Equipe
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="imagem-simples">
+                            <img src="images/Logo/LOGO.png" alt="MentePositiva - Saúde Mental" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="voluntarios" class="bloco-voluntarios text-center">
+            
+            <div class="container">
+                
+                <h2 class="titulo-voluntarios">Nossos Profissionais de Saúde Mental</h2>
+        
+                    <div class="row"> <!-- Adicionei row para garantir o layout em linha -->
+                        <!-- Profissional 1 -->
+                        <div class="col-12 col-md-4 d-flex justify-content-center">
+                            <div class="cartao-profissional text-center">
+                                <img src="images/Volunteers/Psicóloga_ Dra.Maria Silva.jpg" class="cartao-imagem" alt="Dra. Maria Silva">
+                                <div class="cartao-corpo">
+                                    <h5 class="cartao-nome">Dra. Maria Silva</h5>
+                                    <p class="cartao-especialidade">Psicóloga Clínica</p>
+                                    <p class="cartao-descricao">Especialista em terapia cognitivo-comportamental</p>
+
+                                    <button class="btn btn-saiba-mais btn-outline-primary btn-sm w-100 mt-3" data-bs-toggle="modal" data-bs-target="#modalMariaSilva">
+                                        Saiba Mais
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Profissional 2 -->
+                        <div class="col-12 col-md-4 d-flex justify-content-center">
+                            <div class="cartao-profissional text-center">
+                                <img src="images/Volunteers/Psiquiatra_Dr.JoãoSantos.jpg" class="cartao-imagem" alt="Dr. João Santos">
+                                <div class="cartao-corpo">
+                                    <h5 class="cartao-nome">Dr. João Santos</h5>
+                                    <p class="cartao-especialidade">Psiquiatra</p>
+                                    <p class="cartao-descricao">Especialista em saúde mental de adultos</p>
+                                    <button class="btn btn-saiba-mais btn-outline-primary btn-sm w-100 mt-3" data-bs-toggle="modal" data-bs-target="#modalMariaSilva">
+                                        Saiba Mais
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Profissional 3 -->
+                        <div class="col-12 col-md-4 d-flex justify-content-center">
+                            <div class="cartao-profissional text-center">
+                                <img src="images/Volunteers/Terapeuta_Dra.AnaOliveira.jpg" class="cartao-imagem" alt="Dra. Ana Oliveira">
+                                <div class="cartao-corpo">
+                                    <h5 class="cartao-nome">Dra. Ana Oliveira</h5>
+                                    <p class="cartao-especialidade">Terapeuta</p>
+                                    <p class="cartao-descricao">Especialista em terapia familiar</p>
+                                    <button class="btn btn-saiba-mais btn-outline-primary btn-sm w-100 mt-3" data-bs-toggle="modal" data-bs-target="#modalMariaSilva">
+                                        Saiba Mais
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+
+            <!-- Bloco Modal Detalhes Profissionais -->
+            <div class="modal-detalhes-profissionais">
+                <div class="overlay-background"></div>
+                
+                <div class="modal-container">
+                    <div class="modal-content">
+                        <button class="modal-fechar">&times;</button>
+                        
+                        <div class="modal-header">
+                            <div class="avatar-container">
+                                
+                            </div>
+                            <div class="header-texto">
+                                <h3 class="nome-profissional"></h3>
+                                <p class="especialidade-profissional"></p>
+                            </div>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="secao-detalhes">
+                                <h4>Áreas de Especialização</h4>
+                                <p class="areas-especializacao"></p>
+                            </div>
+
+                            <div class="secao-detalhes">
+                                <h4>Abordagem Terapêutica</h4>
+                                <p class="abordagem-terapeutica"></p>
+                            </div>
+
+                            <div class="secao-detalhes">
+                                <h4>Experiência</h4>
+                                <p class="experiencia-profissional"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <article id="blog" class="Block_Blog">
+            <div class="container">
+                <h2>Recursos de Saúde Mental</h2>
+                
+                <div class="introduction">
+                    <p>Explore nossa coleção abrangente de recursos de saúde mental projetados para apoiar sua 
+                        jornada de bem-estar. De artigos de especialistas a exercícios guiados, encontre as ferramentas
+                        necessárias para nutrir sua saúde mental.</p>
+                </div>
+                
+                <!-- Categorias com efeito -->
+                <div class="topic-filter-buttons">
+                    <button class="topic-button">Ansiedade</button>
+                    <button class="topic-button">Depressão</button>
+                    <button class="topic-button">Atenção plena</button>
+                    <button class="topic-button">Auto-Cuidado</button>
+                    <button class="topic-button">Relações</button>
+                </div>
+                
+                <!-- Icons com efeito  -->
+                <div class="Icons"> 
+                    <div class="box_Icons"> 
+                        <div class="icon-container">
+                            <i class="fas fa-book-medical type-icon"></i>
+                        </div>
+                        <h4 class="box_Icons_Title">Artigos de Especialistas</h4>
+                        <p class="box_Icons_description">Recursos apoiados por pesquisas de profissionais de saúde mental
+                        </p>
+                    </div>
+                    
+                    <div class="box_Icons">
+                        <div class="icon-container">
+                            <i class="fas fa-hands-helping type-icon"></i>
+                        </div>
+                        <h4 class="box_Icons_Title">Grupos de Suporte</h4>
+                        <p class="box_Icons_description">Conecte-se com pessoas que entendem o que você está passando</p>
+                    </div>
+                    
+                    <div class="box_Icons">
+                        <div class="icon-container">
+                            <i class="fas fa-brain type-icon"></i>
+                        </div>
+                        <h4 class="box_Icons_Title">Ferramentas de Auto-Ajuda</h4>
+                        <p class="box_Icons_description">Exercícios práticos e estratégias para o uso diário</p>
+                    </div>
+                    
+                    <div class="box_Icons">
+                        <div class="icon-container">
+                            <i class="fas fa-user-md type-icon"></i>
+                        </div>
+                        <h4 class="box_Icons_Title">Ajuda Profissional</h4>
+                        <p class="box_Icons_description">Orientação sobre quando e como procurar apoio profissional</p>
+                    </div>
+                </div>
+        
+        
+                <!-- Efeito de linha de tempo -->
+                <div class="platform-process-flow">
+                    <h3 class="process-heading">Como Nossa Plataforma Apoia Você</h3>
+                    <p class="process-subheading">Acreditamos em tornar o apoio à saúde mental acessível, compassivo
+                            e adaptado às suas necessidades exclusivas.</p>
+                    
+                    <div class="journey-steps">
+                        <div class="journey-step-box">
+                            <div class="step-circle">1</div>
+                            <h4 class="step-heading">Explore Recursos</h4>
+                            <p class="step-details">Navegue pela nossa coleção de artigos e ferramentas de saúde mental</p>
+                        </div>
+                        
+                        <div class="journey-step-box">
+                            <div class="step-circle">2</div>
+                            <h4 class="step-heading">Encontre Suporte</h4>
+                            <p class="step-details">Conecte-se com profissionais ou participe de comunidades de apoio</p>
+                        </div>
+                        
+                        <div class="journey-step-box">
+                            <div class="step-circle">3</div>
+                            <h4 class="step-heading">Tome Ação</h4>
+                            <p class="step-details">Implemente estratégias e acompanhe seu progresso ao longo do tempo</p>
+                        </div>
+                    </div>
+                </div>
+                
+        
+                <!-- Cartões estilizados do BLOG -->
+                <div class="articles-card-grid">
+        
+                    <!-- Card 1 -->
+                    <div class="article-card">
+        
+                        <div class="article-image-wrapper">
+                            <a href="pages/PageBlogs/01-mindfulness.html">
+                                <img src="images/Blog/Example_3.webp" alt="Mindfulness" class="article-thumbnail">
+                            </a>
+                            <span class="article-category-label">Mindfulness</span>
+                        </div>
+        
+                        <div class="article-text-content">
+        
+                            <h3 class="article-heading">5 Práticas de Mindfulness para o Dia a Dia</h3>
+                            <p class="article-summary">Técnicas simples de atenção plena que você pode incorporar à sua rotina diária para reduzir o estresse e aumentar a consciência.</p>
+                            
+                            <div class="article-metadata">
+        
+                                <div class="author-info">
+                                    <i class="fas fa-user-md type-icon"></i>
+                                    <span class="author-fullname">Dra. Maria Silva</span>
+                                </div>
+        
+                                <div class="publication-date">
+                                    <i class="far fa-calendar date-icon"></i> 15 Fev, 2024
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                    
+                    <!-- Card 2 -->
+                    <div class="article-card">
+
+        
+                        <div class="article-image-wrapper">
+                            <a href="pages/PageBlogs/02-depressao.html">
+                                <img src="images/Blog/Example_1.webp" alt="depressao" class="article-thumbnail">
+                            </a>
+                            <span class="article-category-label">Depressão</span>
+                        </div>
+        
+                        <div class="article-text-content">
+        
+                            <h3 class="article-heading">Reconhecendo a Depressão: Sinais e Sintomas</h3>
+                            <p class="article-summary">Aprenda a identificar os sinais comuns de depressão e entenda quando é hora de buscar ajuda profissional.</p>
+                            
+                            <div class="article-metadata">
+                                
+                                <div class="author-info">
+                                    <i class="fas fa-user-md type-icon"></i>
+                                    <span class="author-fullname">Dra. Maria Silva</span>
+                                </div>
+        
+                                <div class="publication-date">
+                                    <i class="far fa-calendar date-icon"></i> 28 Jan, 2024
+                                </div>
+        
+                            </div>
+        
+                        </div>
+        
+                    </div>
+        
+                    
+                    <!-- Resource Card 3 -->
+                    <div class="article-card">
+        
+                        <div class="article-image-wrapper">
+                            <a href="pages/PageBlogs/03-autocuidado.html">
+                                <img src="images/Blog/Example_6.webp" alt="Auto-Cuidado" class="article-thumbnail">
+                            </a>
+                            <span class="article-category-label">Auto-Cuidado</span>
+                        </div>
+        
+                        <div class="article-text-content">
+        
+                            <h3 class="article-heading">Construindo uma Rotina de Autocuidado Duradoura</h3>
+                            <p class="article-summary">Dicas práticas para criar e manter uma rotina de autocuidado que se adapte ao seu estilo de vida e atenda às suas necessidades únicas.</p>
+                            
+                            <div class="article-metadata">
+        
+                                <div class="author-info">
+                                    <i class="fas fa-user-md type-icon"></i>
+                                    <span class="author-fullname">Dr. João Santos</span>
+                                </div>
+        
+                                <div class="publication-date">
+                                    <i class="far fa-calendar date-icon"></i> 3 Mar, 2024
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                    
+                    <!-- Resource Card 4 -->
+                    <div class="article-card">
+        
+                        <div class="article-image-wrapper">
+                            <a href="pages/PageBlogs/04-ataque.html">
+                                <img src="images/Blog/Example_10.webp" alt="Ansiedade" class="article-thumbnail">
+                            </a>
+                            <span class="article-category-label">Ataque-panico</span>
+                        </div>
+        
+                        <div class="article-text-content">
+        
+                            <h3 class="article-heading">Lidando com Ataques de Pânico: Estratégias de Emergência</h3>
+                            <p class="article-summary">Técnicas imediatas e abordagens de longo prazo para gerenciar ataques de pânico e reduzir sua frequência e intensidade.</p>
+                            
+                            <div class="article-metadata">
+        
+                                <div class="author-info">
+                                    <i class="fas fa-user-md type-icon"></i>
+                                    <span class="author-fullname">Dr. João Santos</span>
+                                </div>
+        
+                                <div class="publication-date">
+                                    <i class="far fa-calendar date-icon"></i> 8 Fev, 2024
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                    <!-- Resource Card 5 -->
+                    <div class="article-card">
+        
+                        <div class="article-image-wrapper">
+                            <a href="pages/PageBlogs/05-inteligen-emoci.html">
+                                <img src="images/Blog/Example_17.webp" alt="Inteligência-Emocional" class="article-thumbnail">
+                            </a>
+                            <span class="article-category-label">Inteligência Emocional</span>
+                        </div>
+        
+                        <div class="article-text-content">
+        
+                            <h3 class="article-heading">Comunicação Efetiva: A Base de Relacionamentos Saudáveis</h3>
+                            <p class="article-summary">Aprenda técnicas de comunicação não-violenta e escuta ativa para fortalecer seus relacionamentos e resolver conflitos de forma construtiva.</p>
+                            
+                            <div class="article-metadata">
+                                <div class="author-info">
+        
+                                    <i class="fas fa-user-md type-icon"></i>
+                                    <span class="author-fullname">Dra. Ana Oliveira</span>
+                                </div>
+        
+                                <div class="publication-date">
+                                    <i class="far fa-calendar date-icon"></i> 20 Fev, 2024
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                    <!-- Resource Card 6 -->
+                    <div class="article-card">
+        
+                        <div class="article-image-wrapper">
+                            <a href="pages/PageBlogs/06-Saude-sono.html">
+                                <img src="images/Blog/Example_14.webp" alt="Saúde-do-Sono" class="article-thumbnail">
+                            </a>
+                            <span class="article-category-label">Saúde do Sono</span>
+                        </div>
+        
+                        <div class="article-text-content">
+        
+                            <h3 class="article-heading">Higiene do Sono: 7 Passos para Noites Mais Tranquilas</h3>
+                            <p class="article-summary">Descubra como estabelecer uma rotina de sono adequada e criar um ambiente propício para descansar melhor e aumentar seu bem-estar diário.</p>
+                            
+                            <div class="article-metadata">
+        
+                                <div class="author-info">
+                                    <i class="fas fa-user-md type-icon"></i>
+                                    <span class="author-fullname">Dra. Ana Oliveira</span>
+                                </div>
+        
+                                <div class="publication-date">
+                                    <i class="far fa-calendar date-icon"></i> 12 Fev, 2024
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+        
+        
+                    <!-- É AQUI ONDE ADICIONA MAIS CARTOES ! -->
+        
+                </div>
+                
+                <!-- Call to Action -->
+                <div class="action-prompt-box">
+        
+                    <h3 class="prompt-heading">Pronto para Dar o Próximo Passo?</h3>
+                    <p class="prompt-message">Esteja você procurando apoio profissional ou querendo se juntar à nossa comunidade de voluntários, estamos aqui para ajudá-lo em sua jornada de saúde mental.</p>
+                    
+                    <div class="action-buttons">
+                        <a href="#volunteers" class="btn action-button primary-action-button">Encontrar Suporte</a>
+                        <a href="#volunteer-signup" class="btn action-button secondary-action-button">Torne-se um Voluntário</a>
+                    </div>
+        
+                </div>
+            </div>
+        </article>
+
+        <section id="faq" class="Main_Block_faq">
+            <div class="container">
+                <h2>Perguntas frequentes</h2>
+                
+                <!-- Categorias  -->
+                <div class="block_faq-category">
+                    <button class="faq-category-btn active" data-category="all">Todas</button>
+                    <button class="faq-category-btn" data-category="platform">Plataforma</button>
+                    <button class="faq-category-btn" data-category="services">Serviços</button>
+                    <button class="faq-category-btn" data-category="volunteer">Voluntariado</button>
+                    <button class="faq-category-btn" data-category="privacy">Privacidade</button>
+                </div>
+                
+                <div class="faq-columns">
+
+                    <div class="faq-column">
+                        <div class="block_inside" id="faq_colum-Left">
+
+                            <!-- FAQ Item 1 -->
+                            <div class="block_inside-item" data-category="platform">
+                                <h2 class="block_inside-header">
+                                    <button class="block_inside-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        O que é saúde mental e por que ela é importante ?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="block_inside-collapse collapse" data-bs-parent="#faqAccordionLeft">
+                                    <div class="block_inside-body">
+                                        Saúde mental se refere ao bem-estar emocional, psicológico e social de uma pessoa. Ela afeta
+                                        a forma como pensamos, sentimos e nos comportamos no dia a dia. Ter uma boa saúde mental é essencial 
+                                        para lidar com o estresse, manter relacionamentos saudáveis e tomar decisões importantes.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ Item 2 -->
+                            <div class="block_inside-item" data-category="services">
+                                <h2 class="block_inside-header">
+                                    <button class="block_inside-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        Como saber se preciso procurar ajuda profissional ?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="block_inside-collapse collapse" data-bs-parent="#faqAccordionLeft">
+                                    <div class="block_inside-body">
+                                        Se você está enfrentando sentimentos persistentes de tristeza, ansiedade, irritabilidade, 
+                                        mudanças no sono ou apetite, dificuldade de concentração ou pensamentos negativos recorrentes, pode ser 
+                                        um sinal de que a ajuda de um profissional da saúde mental pode ser benéfica.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ Item 3 -->
+                            <div class="block_inside-item" data-category="volunteer">
+                                <h2 class="block_inside-header">
+                                    <button class="block_inside-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        Quais são os profissionais que podem ajudar na saúde mental ?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="block_inside-collapse collapse" data-bs-parent="#faqAccordionLeft">
+                                    <div class="block_inside-body">
+                                        Os principais profissionais são: <br><br>
+
+                                        <strong>Psicólogos:</strong> oferecem terapia para ajudar a lidar com emoções e comportamentos. <br><br>
+
+                                        <strong>Psiquiatras:</strong> médicos especializados que podem diagnosticar transtornos e, se necessário, prescrever medicamentos. <br><br>
+
+                                        <strong>Terapeutas ocupacionais e assistentes sociais:</strong> ajudam na reintegração social e no desenvolvimento de habilidades para a vida.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ Item 4 -->
+                            <div class="block_inside-item" data-category="privacy">
+                                <h2 class="block_inside-header">
+                                    <button class="block_inside-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                        Qual a diferença entre psicólogo e psiquiatra ?
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="block_inside-collapse collapse" data-bs-parent="#faqAccordionLeft">
+                                    <div class="block_inside-body">
+                                        O psicólogo trabalha com terapia, ajudando na compreensão e no tratamento de emoções e comportamentos. O psiquiatra 
+                                        é um médico que pode diagnosticar transtornos mentais e prescrever medicamentos, se necessário. Muitas vezes, os dois trabalham
+                                        juntos para um tratamento mais completo.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ Item 5 -->
+                            <div class="block_inside-item" data-category="services">
+                                <h2 class="block_inside-header">
+                                    <button class="block_inside-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                        Quais profissionais ajudam na minha saúde mental?
+                                    </button>
+                                </h2>
+                                <div id="faq5" class="block_inside-collapse collapse" data-bs-parent="#faqAccordionLeft">
+                                    <div class="block_inside-body">
+                                        Você pode agendar uma consulta diretamente com um psicólogo ou psiquiatra, procurar serviços de saúde pública
+                                        (como o SUS, no Brasil) ou verificar se seu plano de saúde cobre atendimento psicológico ou psiquiátrico.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-column">
+                        <div class="block_inside" id="faq_colum-Right">
+                            <!-- FAQ Item 6 -->
+                            <div class="block_inside-item" data-category="platform">
+                                <h2 class="block_inside-header">
+                                    <button class="block_inside-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                        O que é terapia e como ela pode me ajudar ?
+                                    </button>
+                                </h2>
+                                <div id="faq6" class="block_inside-collapse collapse" data-bs-parent="#faqAccordionRight">
+                                    <div class="block_inside-body">
+                                        A terapia é um processo conduzido por um profissional qualificado, no qual você pode expressar seus sentimentos, 
+                                        entender padrões de pensamento e comportamento e aprender estratégias para lidar melhor com desafios emocionais.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ Item 7 -->
+                            <div class="block_inside-item" data-category="services">
+                                <h2 class="block_inside-header">
+                                    <button class="block_inside-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                        Terapia é apenas para quem tem transtornos mentais ?
+                                    </button>
+                                </h2>
+                                <div id="faq7" class="block_inside-collapse collapse" data-bs-parent="#faqAccordionRight">
+                                    <div class="block_inside-body">
+                                        Não. A terapia pode ser benéfica para qualquer pessoa que queira se autoconhecer, melhorar a autoestima, desenvolver 
+                                        habilidades emocionais ou lidar melhor com desafios da vida.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ Item 8 -->
+                            <div class="block_inside-item" data-category="platform">
+                                <h2 class="block_inside-header">
+                                    <button class="block_inside-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                        Como saber se tenho ansiedade ou depressão ?
+                                    </button>
+                                </h2>
+                                <div id="faq8" class="block_inside-collapse collapse" data-bs-parent="#faqAccordionRight">
+                                    <div class="block_inside-body">
+                                        Os sintomas de ansiedade incluem preocupação excessiva, medo intenso, inquietação e insônia. Já a depressão 
+                                        envolve tristeza persistente, falta de interesse em atividades, fadiga e pensamentos negativos. Apenas um profissional 
+                                        pode diagnosticar corretamente essas condições.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ Item 9 -->
+                            <div class="block_inside-item" data-category="privacy">
+                                <h2 class="block_inside-header">
+                                    <button class="block_inside-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                                        Medicamentos psiquiátricos viciam ?
+                                    </button>
+                                </h2>
+                                <div id="faq9" class="block_inside-collapse collapse" data-bs-parent="#faqAccordionRight">
+                                    <div class="block_inside-body">
+                                        Nem todos os medicamentos psiquiátricos causam dependência. Alguns podem ter efeitos colaterais
+                                        ou exigir um acompanhamento cuidadoso, mas quando usados corretamente e com orientação médica, são seguros e eficazes.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ Item 10 -->
+                            <div class="block_inside-item" data-category="services">
+                                <h2 class="block_inside-header">
+                                    <button class="block_inside-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+                                        O que fazer se alguém próximo estiver enfrentando problemas emocionais ?
+                                    </button>
+                                </h2>
+                                <div id="faq10" class="block_inside-collapse collapse" data-bs-parent="#faqAccordionRight">
+                                    <div class="block_inside-body">
+                                        Demonstre apoio, ouça sem julgamentos e incentive a pessoa a buscar ajuda profissional. Se houver risco de suicídio
+                                        ou automutilação, procure ajuda imediatamente em serviços de emergência.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles -->
+                <div class="faq-controls">
+                    <button id="expandAllBtn" class="faq-control-btn">Expandir Todos</button>
+                    <button id="collapseAllBtn" class="faq-control-btn">Recolher Todos</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="secao-contato">
+            <div class="container">
+                <h2 class="titulo-contato">Entre em contato</h2>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="formulario-contato">
+                            <input type="text" class="campo-contato" placeholder="Seu nome">
+                            
+                            <input type="email" class="campo-contato" placeholder="Seu e-mail">
+                            
+                            <textarea class="campo-contato campo-mensagem" placeholder="Sua mensagem"></textarea>
+                            
+                            <button type="submit" class="btn-enviar">Enviar mensagem</button>
+                        </form>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="box-emergencia">
+                            <h3 class="titulo-emergencia">Suporte de emergência</h3>
+                            
+                            <p class="texto-emergencia">Se você estiver em crise, ligue para os serviços de emergência ou entre em contato com uma linha de apoio a crises imediatamente.</p>
+                            
+                            <a href="tel:911" class="btn-emergencia">
+                                <i class="fas fa-phone-alt"></i> Emergência: 188
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="rodape">
+            <div class="container rodape-conteudo py-5">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <h2 class="rodape-logo mb-3 text-start">MentePositiva</h2>
+                        <p class="rodape-slogan text-start">Conectando apoio psicológico acessível a quem precisa.</p>
+                        
+                        <div class="d-flex mt-4 gap-3">
+                            <a href="https://www.instagram.com/abrasme/" class="social-link social-instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/saudementalabrasme/" class="social-link social-facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://wa.me/5518996336663?text=Gostaria%20de%20agendar%20uma%20consulta" class="social-link social-whatsapp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Links Rápidos -->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <h3 class="rodape-titulo mb-3">Navegação</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2">
+                                <a href="#inicio" class="rodape-link secao-link" data-secao="inicio">Início</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#voluntarios" class="rodape-link secao-link" data-secao="voluntarios">Voluntários</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#blog" class="rodape-link secao-link" data-secao="blog">Blog</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/Agendamentos/index.html" class="rodape-link secao-link"  data-secao="agendamento">Agendamento</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#faq" class="rodape-link secao-link" data-secao="faq">FAQ</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#contato" class="rodape-link secao-link" data-secao="contato">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Blog Links -->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mt-4 mt-md-0">
+                        <h3 class="rodape-titulo mb-3">Artigos do Blog</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2">
+                                <a href="pages/PageBlogs/01-mindfulness.html" class="rodape-link">Mindfulness</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/PageBlogs/02-depressao.html" class="rodape-link">Depressão</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/PageBlogs/03-autocuidado.html" class="rodape-link">Auto-Cuidado</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/PageBlogs/04-ataque.html" class="rodape-link">Ansiedade</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/PageBlogs/05-inteligen-emoci.html" class="rodape-link">Inteligência Emocional</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/PageBlogs/06-Saude-sono.html" class="rodape-link">Saúde do Sono</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Newsletter -->
+                    <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                        <h3 class="rodape-titulo mb-3">Inscreva-se</h3>
+                        <p class="rodape-texto mb-3">Digite seu e-mail para ser notificado sobre nossas atualizações, novos conteúdos e eventos gratuitos.</p>
+                        
+                        <div class="newsletter-container">
+                            <div class="newsletter-inner">
+                                <input type="email" class="newsletter-input" placeholder="Seu e-mail" aria-label="E-mail">
+                                <button class="newsletter-botao" type="button">
+                                    <i class="fa-regular fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <p class="rodape-privacidade mt-3">Respeitamos sua privacidade. Não compartilhamos seus dados.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rodape-divisor"></div>
+            
+            <div class="container rodape-copyright py-3">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                        &copy; 2025 MentePositiva - Todos os direitos reservados
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#" class="rodape-termos">Termos de Uso</a>
+                        <span class="rodape-separador">|</span>
+                        <a href="#" class="rodape-termos">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/01-header.js"></script>
+    <script src="js/02-Bloco-1.js"></script>
+    <script src="js/03-Volunteers.js"></script>
+    <script src="js/05-Faq.js"></script>
+</body>
+</html>

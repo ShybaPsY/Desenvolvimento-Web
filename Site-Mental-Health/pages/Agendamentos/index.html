@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agendamento de Consulta | MentePositiva</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho shadow-sm">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <a href="#" class="logotipo"><span>Agendamento</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="secao-agendamento">
+            <h2 class="titulo-agendamento">Agendando Consulta</h2>
+            
+            <div class="container-agendamento">
+                <div class="formulario-agendamento">
+                    <form id="formAgendamento">
+                        <div class="grupo-campo">
+                            <label for="nome" class="label-campo">Seu Nome:</label>
+                            <input type="text" id="nome" class="campo-agendamento" required>
+                        </div>
+
+                        <div class="grupo-campo">
+                            <label for="nomePsico" class="label-campo">Nome do Psicólogo:</label>
+                            <input type="text" id="nomePsico" class="campo-agendamento" required>
+                        </div>
+                        
+                        <div class="grupo-campo">
+                            <label for="data" class="label-campo">Data da Consulta:</label>
+                            <input type="date" id="data" class="campo-agendamento" required>
+                        </div>
+                        
+                        <div class="grupo-campo">
+                            <label for="hora" class="label-campo">Horário da Consulta:</label>
+                            <input type="time" id="hora" class="campo-agendamento" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-agendar">
+                            <i class="far fa-calendar-check"></i> Confirmar Agendamento
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="info-agendamento">
+                    <div class="card-info">
+                        <h3 class="titulo-card">
+                            <i class="fas fa-info-circle"></i> Informações Importantes
+                        </h3>
+                        <p class="texto-card">
+                            As consultas têm duração de 50 minutos e devem ser agendadas com pelo menos 24 horas de antecedência. 
+                            Em caso de cancelamento, por favor, avise com no mínimo 12 horas de antecedência.
+                        </p>
+                    </div>
+                    
+                    <div class="card-info">
+                        <h3 class="titulo-card">
+                            <i class="fas fa-lightbulb"></i> Dicas para sua Consulta
+                        </h3>
+                        <ul class="dicas-lista">
+                            <li><i class="fas fa-check"></i> Encontre um local tranquilo e privado</li>
+                            <li><i class="fas fa-check"></i> Verifique sua conexão com a internet</li>
+                            <li><i class="fas fa-check"></i> Tenha água por perto</li>
+                            <li><i class="fas fa-check"></i> Anote pontos que gostaria de discutir</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js.js"></script>
+
+</body>
+</html>
