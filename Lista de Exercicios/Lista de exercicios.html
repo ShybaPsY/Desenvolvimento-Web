@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto Lista de Exercícios</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .exercicio { margin-bottom: 40px; }
+    #contador { font-size: 24px; margin: 10px 0; }
+    #cronometro { font-size: 24px; margin: 10px 0; }
+    .erro { color: red; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="exercicio">
+    <h2>1. Mudar Cor da Div</h2>
+    <select id="selectCor">
+      <option value="white">Selecione uma cor</option>
+      <option value="red">Vermelho</option>
+      <option value="green">Verde</option>
+      <option value="blue">Azul</option>
+      <option value="yellow">Amarelo</option>
+    </select>
+    <div id="corDiv" style="width: 200px; height: 100px; border: 1px solid #000; margin-top: 10px;"></div>
+  </div>
+
+  <div class="exercicio">
+    <h2>2. Incrementar/Decrementar Número</h2>
+    <div id="contador">0</div>
+    <button onclick="alterarNumero(1)">Incrementar</button>
+    <button onclick="alterarNumero(-1)">Decrementar</button>
+  </div>
+
+  <div class="exercicio">
+    <h2>3. Cronômetro</h2>
+    <div id="cronometro">00:00</div>
+    <button onclick="iniciarCronometro()">Iniciar</button>
+    <button onclick="zerarCronometro()">Zerar</button>
+  </div>
+
+  <div class="exercicio">
+    <h2>4. Validação de Formulário</h2>
+    <label>Nome Completo: <input type="text" id="nomeCompleto"></label><br>
+    <label>Email: <input type="text" id="email"></label><br>
+    <label>CPF: <input type="text" id="cpf"></label><br>
+    <label>Celular: <input type="text" id="celular"></label><br>
+    <button onclick="validarFormulario()">Validar</button>
+    <div id="mensagensErro"></div>
+  </div>
+
+  <script>
+    document.querySelector('#selectCor').addEventListener('change', function () {
+      var cor = this.value;
+      document.getElementById('corDiv').style.backgroundColor = cor;
+    });
+
+    var valor = 0;
+    function alterarNumero(altera) {
+      valor += altera;
+      var contador = document.getElementById('contador');
+      contador.innerText = valor;
+      if (valor % 2 === 0) {
+        contador.style.color = 'blue';
+      }
+      else {
+        contador.style.color = 'green';
+      }
+    }
+
+    var segundosTotais = 0;
+    var intervaloID = null;
+
+    function atualizarCronometro() {
+      var minutos = Math.floor(segundosTotais / 60);
+      var segundos = segundosTotais % 60;
+
+      var strMinutos = '';
+      var strSegundos = '';
+
+      if (minutos < 10) {
+        strMinutos = '0' + minutos;
+      }
+      else {
+        strMinutos = '' + minutos;
+      }
+
+      if (segundos < 10) {
+        strSegundos = '0' + segundos;
+      }
+      else {
+        strSegundos = '' + segundos;
+      }
+
+      document.getElementById('cronometro').innerText = strMinutos + ':' + strSegundos;
+    }
+
+    function iniciarCronometro() {
+      if (intervaloID === null) {
+        intervaloID = setInterval(function () {
+          segundosTotais++;
+          atualizarCronometro();
+        }, 1000);
+      }
+    }
+
+    function zerarCronometro() {
+      clearInterval(intervaloID);
+      intervaloID = null;
+      segundosTotais = 0;
+      atualizarCronometro();
+    }
+
+    function validarFormulario() {
+      var nome = document.getElementById('nomeCompleto').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var cpf = document.getElementById('cpf').value.trim();
+      var celular = document.getElementById('celular').value.trim();
+      var mensagens = [];
+
+      if (nome.split(' ').length < 2)
+        mensagens.push("Nome deve conter pelo menos dois nomes.");
+      if (!email.includes('@'))
+        mensagens.push("Email deve conter '@'.");
+      if (cpf.length !== 11)
+        mensagens.push("CPF deve conter 11 caracteres.");
+      if (celular.length < 8 || celular.length > 9)
+        mensagens.push("Celular deve ter entre 8 e 9 caracteres.");
+
+      var divMensagens = document.getElementById('mensagensErro');
+      divMensagens.innerHTML = "";
+      if (mensagens.length > 0) {
+        mensagens.forEach(function(msg) {
+          var p = document.createElement('p');
+          p.className = 'erro';
+          p.textContent = msg;
+          divMensagens.appendChild(p);
+        });
+      }
+      else {
+        alert("Todos os dados são válidos!");
+      }
+    }
+  </script>
+</body>
+</html>

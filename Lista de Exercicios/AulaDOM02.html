@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Aula DOM - Parte 02</title>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    * {
+      font-size: 20px;
+      font-family: calibri;
+    }
+  </style>
+  <script>
+    function funcJS() {
+      alert('Esta função está fixa num elemento HTML!!')
+    }
+    function mensagem() {
+      alert('Esta função será vinculada a um elemento HTML em tempo de execução!!')
+    }
+
+    function mensagem2() {
+      alert('Esta função será vinculada a um elemento HTML em tempo de execução com addEventListener!!')
+    }
+    function mensagem3() {
+      alert('Esta função será vinculada a um elemento HTML em tempo de execução com DOMContentLoaded!!')
+    }
+    //Forma 3 - associar os eventos em elementos HTML antes da página ser carregada
+    document.addEventListener('DOMContentLoaded',
+      function (event) {
+        var vetH3 = document.querySelector('#dCursos').querySelectorAll('h3');
+        for (let i = 0; i < vetH3.length; i++) {
+          vetH3[i].addEventListener('click', mensagem3, false);
+        }
+      }, false)
+function enviardados() { 
+  var nome = document.querySelector("#tx_nome");
+  var email = document.querySelector("#tx_email"); 
+  var correto = true;
+  if(nome.value.length < 8)
+  {  nome.value = "";
+     nome.setAttribute('placeholder','Preencha NOME corretamente!');
+     nome.style.border = "solid 2px red";
+     correto = false;
+  }
+  //var atpos = email.value.indexOf("@");
+  //var dotpos = email.value.lastIndexOf(".");
+  var ExEmail = new RegExp(/^(\w+[\-\.])*\w+@(\w+\.)+[A-Za-z]+$/); 
+
+  if(!ExEmail.test(email.value))
+  {  email.value = "";
+     email.setAttribute('placeholder','Preencha um E-MAIL correto!');
+     email.style.border = "solid 2px red";
+     correto = false;
+  }
+  if (correto){
+    email.style.border = "solid 1px black";
+    nome.style.border = "solid 1px black";
+  }
+
+ }
+  
+  </script>
+</head>
+
+<body>
+  <form id="cadastro">
+    <label for="tx_nome">Nome: </label><br />
+    <input id="tx_nome" type="text" size="52" /> <br />
+    <label for="tx_email">E-mail: </label><br />
+    <input id="tx_email" type="text" size="52" /><br />
+    <label for="tx_email">Mensagem: </label><br />
+    <textarea id="tx_mensagem" cols="52" rows="8"></textarea><br />
+    <input id="Enviar" type="button" value="Enviar dados" 
+              onclick="enviardados()" />
+  </form>
+  <h2>Testando eventos fixos</h2>
+  <input type="button" value="Evento Fixo" onclick="funcJS()">
+  <hr>
+  <h2>Testando inserir eventos em elementos que já existem na tela</h2>
+  <p id="evento1">Testando associação de eventos</p>
+  <hr>
+  <div id="dLinks">
+    <ul>
+      <li><a href="#" id="link1">Unoeste</a></li>
+      <li><a href="#" id="link2">FIPP</a></li>
+      <li><a href="#" id="link3">FEPP</a></li>
+      <li><a href="#" id="link4">FAMEPP</a></li>
+    </ul>
+  </div>
+  <a href="#" id="link5">Link Fora</a>
+  <hr>
+  <div id="dCursos">
+    <h3>BSI</h3>
+    <h3>BCC</h3>
+    <h3>ADS</h3>
+  </div>
+
+</body>
+<script type="text/javascript">
+  // Forma 1 de vinculação de eventos em tempo de execução
+  var parag = document.querySelector('#evento1');
+  parag.onclick = mensagem;
+
+  //pegar todos os links da página
+  //var vetLinks = document.querySelectorAll('a');
+
+  //Forma 2 - usando addEventListener
+  //Pegar todos os links que estão na DIV
+  var vDiv = document.querySelector('#dLinks');
+  var vetLinks = vDiv.querySelectorAll('a');
+  for (let i = 0; i < vetLinks.length; i++) {
+    // vetLinks[i].addEventListener('click', function () {
+    //   alert('Testando associar eventos com addEventListener!!')
+    // }, false)
+    //OU             
+    vetLinks[i].addEventListener('click', mensagem2, false)
+  }
+</script>
+
+</html>
