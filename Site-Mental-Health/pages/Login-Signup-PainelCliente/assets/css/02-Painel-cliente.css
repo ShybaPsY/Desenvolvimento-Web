@@ -1,0 +1,269 @@
+:root {
+    --primary-color: #1abc9c;
+    --primary-gradient: linear-gradient(135deg, #1abc9c, #3498db);
+    --secondary-color: #3498db;
+    --bg-dark: #2c3e50;
+    --bg-darker: #34495e;
+    --bg-card: #34495e;
+    --text-primary: #ffffff;
+    --text-secondary: #bdc3c7;
+    --text-muted: #95a5a6;
+    --border-color: #4a5f7a;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --border-radius: 16px;
+    --shadow-md: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+    --shadow-xl: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color);
+    
+    /* Controle de tamanho dos cartões */
+    --cartao-largura: 1.2;
+    --cartao-tamanho-base: 280px;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    color: var(--text-primary);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+
+/*CABEÇALHO (HEADER)*/
+.bg-white {
+    background: #ffffff !important;
+}
+
+.border-bottom {
+    border-color: #dee2e6 !important;
+}
+
+.text-dark {
+    color: #212529 !important;
+}
+
+.navbar {
+    background: #f0f0f0; 
+}
+
+.navbar-brand .text-dark h1 {
+    color: #212529 !important;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*  CONTEÚDO PRINCIPAL */
+.titulo-pagina {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.subtitulo-pagina {
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.cartao-conta {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: var(--cartao-largura) / 1;
+    width: 100%;
+    max-width: var(--cartao-tamanho-base);
+    animation: surgirDeAbaixo 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+    margin: 0 auto;
+}
+
+.cartao-conta:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--bg-card), #3d566e);
+}
+
+.cartao-conta:hover .icone-cartao {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.icone-cartao {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.titulo-cartao {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.descricao-cartao {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+/* CORES DOS ÍCONES */
+.icone-perfil { 
+    background: linear-gradient(135deg, #3498db, #2980b9) !important;
+}
+.icone-senha { 
+    background: linear-gradient(135deg, #1abc9c, #16a085) !important;
+}
+.icone-profissionais { 
+    background: linear-gradient(135deg, #9b59b6, #8e44ad) !important;
+}
+.icone-endereco { 
+    background: linear-gradient(135deg, #e67e22, #d35400) !important;
+}
+.icone-consulta { 
+    background: linear-gradient(135deg, #f39c12, #e67e22) !important;
+}
+.icone-sair { 
+    background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
+}
+
+/* BADGE DE NOTIFICAÇÃO */
+.badge-notificacao {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary-gradient);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+    animation: pulsar 2s infinite;
+}
+
+/* LAYOUT E GRID*/
+.grid-cartoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ANIMAÇÕES E EFEITOS */
+@keyframes pulsar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes surgirDeAbaixo {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes animacao-onda {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.cartao-conta:nth-child(1) { animation-delay: 0.1s; }
+.cartao-conta:nth-child(2) { animation-delay: 0.2s; }
+.cartao-conta:nth-child(3) { animation-delay: 0.3s; }
+.cartao-conta:nth-child(4) { animation-delay: 0.4s; }
+.cartao-conta:nth-child(5) { animation-delay: 0.5s; }
+.cartao-conta:nth-child(6) { animation-delay: 0.6s; }
+
+.efeito-onda {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(26, 188, 156, 0.3);
+    transform: scale(0);
+    animation: animacao-onda 0.6s linear;
+    pointer-events: none;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    :root {
+        --cartao-tamanho-base: 240px;
+    }
+    .titulo-pagina { font-size: 2rem; }
+    .grid-cartoes {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    .titulo-cartao {
+        font-size: 1rem;
+    }
+    .descricao-cartao {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --cartao-tamanho-base: 200px;
+    }
+    .titulo-pagina { font-size: 1.8rem; }
+    .grid-cartoes {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 1rem;
+    }
+    .icone-cartao { 
+        width: 56px; 
+        height: 56px; 
+        font-size: 1.6rem; 
+    }
+    .titulo-cartao {
+        font-size: 0.95rem;
+    }
+    .descricao-cartao {
+        font-size: 0.75rem;
+    }
+}

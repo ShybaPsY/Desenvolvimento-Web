@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Profissional - MentePositiva</title>
+    <meta name="description" content="Sistema de Cadastro Profissional - MentePositiva" />
+    <meta name="author" content="MentePositiva" />
+
+    <meta property="og:title" content="Cadastro Profissional - MentePositiva" />
+    <meta property="og:description" content="Sistema de Cadastro Profissional - MentePositiva" />
+    <meta property="og:type" content="website" />
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <header class="bg-white border-bottom shadow-sm">
+        <nav class="navbar navbar-expand-lg py-2">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/Main-index.html" class="text-decoration-none text-dark">
+                        <h1 class="fs-2 fw-bold mb-0">Mente<span class="gradient-text">Positiva</span></h1>
+                    </a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold text-dark px-3 py-2 me-3" href="04-Painel-cliente.html">
+                                Painel de Cliente
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold text-dark px-3 py-2" href="/Site-Mental-Health/Main-index.html">
+                                Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--TÍTULO (CADASTRO) -->
+    <div class="min-h-screen bg-gradient py-8">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold text-dark mb-4">Cadastro Profissional</h1>
+            </div>
+
+            <form id="formularioCadastro" novalidate>
+                <!-- DADOS PESSOAIS -->
+                <div class="card shadow-lg border-0 mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-user me-2"></i>
+                            Dados Pessoais
+                        </h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="row g-3">
+                            <div class="col-lg-8">
+                                <label for="nomeCompleto" class="form-label">Nome Completo *</label>
+                                <input type="text" class="form-control" id="nomeCompleto" placeholder="Informe seu nome completo" required>
+                                <div class="invalid-feedback">Nome deve ter pelo menos 10 caracteres</div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label for="genero" class="form-label">Gênero *</label>
+                                <select class="form-select" id="genero" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                    <option value="outro">Outro</option>
+                                    <option value="prefiro-nao-informar">Prefiro não informar</option>
+                                </select>
+                                <div class="invalid-feedback">Gênero é obrigatório</div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="email" class="form-label">E-mail *</label>
+                                <input type="email" class="form-control" id="email" placeholder="exemplo@email.com" required>
+                                <div class="invalid-feedback">E-mail inválido</div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="cpf" class="form-label">CPF *</label>
+                                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" maxlength="14" required>
+                                <div class="invalid-feedback">CPF inválido</div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="rg" class="form-label">RG *</label>
+                                <input type="text" class="form-control" id="rg" placeholder="Informe seu RG" required>
+                                <div class="invalid-feedback">RG é obrigatório</div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="dataNascimento" class="form-label">Data de Nascimento *</label>
+                                <input type="date" class="form-control" id="dataNascimento" required>
+                                <div class="invalid-feedback">Idade deve estar entre 16 e 120 anos</div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="telefone" class="form-label">Telefone *</label>
+                                <input type="text" class="form-control" id="telefone" placeholder="(11)1234-5678" maxlength="15" required>
+                                <div class="invalid-feedback">Telefone é obrigatório</div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="celular" class="form-label">Celular *</label>
+                                <input type="text" class="form-control" id="celular" placeholder="(11)91234-5678" maxlength="15" required>
+                                <div class="invalid-feedback">Celular é obrigatório</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENDEREÇO -->
+                <div class="card shadow-lg border-0 mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Endereço
+                        </h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="cep" class="form-label">CEP *</label>
+                                <input type="text" class="form-control" id="cep" placeholder="Informe o CEP" maxlength="10" required>
+                                <div class="invalid-feedback">NÃO SEI O MEU CEP</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="logradouro" class="form-label">Endereço *</label>
+                                <input type="text" class="form-control" id="logradouro" placeholder="Ex: Rua das flores" required>
+                                <div class="invalid-feedback">Endereço é obrigatório</div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="numero" class="form-label">Número *</label>
+                                <input type="text" class="form-control" id="numero" placeholder="Ex: 0000" required>
+                                <div class="invalid-feedback">Número é obrigatório</div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="complemento" class="form-label">Complemento</label>
+                                <input type="text" class="form-control" id="complemento" placeholder="Apartamento, Casa, Sala, Loja, Edifício">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="bairro" class="form-label">Bairro *</label>
+                                <input type="text" class="form-control" id="bairro" placeholder="Informe o bairro" required>
+                                <div class="invalid-feedback">Bairro é obrigatório</div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="cidade" class="form-label">Cidade *</label>
+                                <input type="text" class="form-control" id="cidade" placeholder="Informe a cidade" required>
+                                <div class="invalid-feedback">Cidade é obrigatória</div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="estado" class="form-label">Estado *</label>
+                                <select class="form-select" id="estado" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                                <div class="invalid-feedback">Estado é obrigatório</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTÕES -->
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-lg px-5 me-3">
+                            <i class="fas fa-save me-2"></i>Salvar
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-5" onclick="limparFormulario()">
+                            <i class="fas fa-eraser me-2"></i>Limpar
+                        </button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-success btn-lg px-5" onclick="baixarDados()">
+                            <i class="fas fa-download me-2"></i>Baixar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Container de Notificações -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toastSucesso" class="toast align-items-center text-white bg-success border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Cadastro realizado com sucesso!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+        <div id="toastErro" class="toast align-items-center text-white bg-danger border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Por favor, corrija os erros no formulário.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

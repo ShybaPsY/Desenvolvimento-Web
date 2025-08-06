@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profissionais - MentePositiva</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="assets/css/05-proficionais.css">
+</head>
+<body class="bg-light">
+
+    <header class="bg-white border-bottom shadow-sm">
+        <nav class="navbar navbar-expand-lg py-2">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/Main-index.html" class="text-decoration-none text-dark">
+                        <h1 class="fs-2 fw-bold mb-0">Mente<span class="gradient-text">Positiva</span></h1>
+                    </a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold text-dark px-3 py-2 me-3" href="04-Painel-cliente.html">
+                                Painel de Cliente
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold text-dark px-3 py-2" href="/Site-Mental-Health/Main-index.html">
+                                Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="py-5 text-center">
+        <div class="container">
+            <h2 class="text-dark mb-4">Nossos Profissionais</h2>
+            <p class="text-muted mx-auto" style="max-width: 600px;">
+                Conheça nossa equipe de profissionais especializados em saúde mental. 
+                Todos os nossos especialistas são altamente qualificados e comprometidos 
+                com o seu bem-estar.
+            </p>
+        </div>
+    </div>
+
+    <!-- Seção de Profissionais -->
+    <div class="container-profissionais">
+        <div class="container">
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-profissional">
+                        <div class="imagem-profissional">
+                            <img src="/img-medicos/1.png" alt="Dra. Ana Silva" class="foto-profissional">
+                            <div class="avaliacao">
+                                <i class="fas fa-star"></i>4.8
+                            </div>
+                        </div>
+                        <div class="informacoes-profissional">
+                            <h4 class="fw-bold mb-1">Dra. Ana Silva</h4>
+                            <p class="especialidade mb-3">Psicóloga</p>
+                            <p class="experiencia mb-3">
+                                <i class="fas fa-briefcase me-2"></i>15 anos de experiência
+                            </p>
+                            <button class="botao-info" onclick="verMaisInfo('Dra. Ana Silva', 'Psicóloga')">
+                                Ver mais informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-profissional">
+                        <div class="imagem-profissional">
+                            <img src="/img-medicos/2.png" alt="Dr. Carlos Santos" class="foto-profissional">
+                            <div class="avaliacao">
+                                <i class="fas fa-star"></i>4.9
+                            </div>
+                        </div>
+                        <div class="informacoes-profissional">
+                            <h4 class="fw-bold mb-1">Dr. Carlos Santos</h4>
+                            <p class="especialidade mb-3">Psiquiatra</p>
+                            <p class="experiencia mb-3">
+                                <i class="fas fa-briefcase me-2"></i>12 anos de experiência
+                            </p>
+                            <button class="botao-info" onclick="verMaisInfo('Dr. Carlos Santos', 'Psiquiatra')">
+                                Ver mais informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-profissional">
+                        <div class="imagem-profissional">
+                            <img src="/img-medicos/3.png" alt="Dra. Mariana Costa" class="foto-profissional">
+                            <div class="avaliacao">
+                                <i class="fas fa-star"></i>4.7
+                            </div>
+                        </div>
+                        <div class="informacoes-profissional">
+                            <h4 class="fw-bold mb-1">Dra. Mariana Costa</h4>
+                            <p class="especialidade mb-3">Terapeuta</p>
+                            <p class="experiencia mb-3">
+                                <i class="fas fa-briefcase me-2"></i>10 anos de experiência
+                            </p>
+                            <button class="botao-info" onclick="verMaisInfo('Dra. Mariana Costa', 'Terapeuta')">
+                                Ver mais informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-profissional">
+                        <div class="imagem-profissional">
+                            <img src="/img-medicos/4.png" alt="Dr. Pedro Oliveira" class="foto-profissional">
+                            <div class="avaliacao">
+                                <i class="fas fa-star"></i>4.9
+                            </div>
+                        </div>
+                        <div class="informacoes-profissional">
+                            <h4 class="fw-bold mb-1">Dr. Pedro Oliveira</h4>
+                            <p class="especialidade mb-3">Psicólogo</p>
+                            <p class="experiencia mb-3">
+                                <i class="fas fa-briefcase me-2"></i>8 anos de experiência
+                            </p>
+                            <button class="botao-info" onclick="verMaisInfo('Dr. Pedro Oliveira', 'Psicólogo')">
+                                Ver mais informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-profissional">
+                        <div class="imagem-profissional">
+                            <img src="/img-medicos/6.png" alt="Dra. Juliana Lima" class="foto-profissional">
+                            <div class="avaliacao">
+                                <i class="fas fa-star"></i>4.8
+                            </div>
+                        </div>
+                        <div class="informacoes-profissional">
+                            <h4 class="fw-bold mb-1">Dra. Juliana Lima</h4>
+                            <p class="especialidade mb-3">Psiquiatra</p>
+                            <p class="experiencia mb-3">
+                                <i class="fas fa-briefcase me-2"></i>11 anos de experiência
+                            </p>
+                            <button class="botao-info" onclick="verMaisInfo('Dra. Juliana Lima', 'Psiquiatra')">
+                                Ver mais informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-profissional">
+                        <div class="imagem-profissional">
+                            <img src="/img-medicos/5.png" alt="Dr. Rafael Souza" class="foto-profissional">
+                            <div class="avaliacao">
+                                <i class="fas fa-star"></i>4.7
+                            </div>
+                        </div>
+                        <div class="informacoes-profissional">
+                            <h4 class="fw-bold mb-1">Dr. Rafael Souza</h4>
+                            <p class="especialidade mb-3">Terapeuta</p>
+                            <p class="experiencia mb-3">
+                                <i class="fas fa-briefcase me-2"></i>9 anos de experiência
+                            </p>
+                            <button class="botao-info" onclick="verMaisInfo('Dr. Rafael Souza', 'Terapeuta')">
+                                Ver mais informações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Informações do Profissional -->
+    <div class="modal fade" id="modalProfissional" tabindex="-1" aria-labelledby="modalProfissionalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <div class="imagem-profissional-modal mb-4">
+                                <img src="" alt="" class="foto-profissional-modal">
+                            </div>
+                            <h3 class="nome-profissional mb-2"></h3>
+                            <p class="especialidade-profissional mb-3"></p>
+                            <div class="avaliacao-modal mb-3"></div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="info-section mb-4">
+                                <h4 class="titulo-secao">Formação</h4>
+                                <ul class="formacao-lista"></ul>
+                            </div>
+                            <div class="info-section mb-4">
+                                <h4 class="titulo-secao">Especialidades</h4>
+                                <ul class="especialidades-lista"></ul>
+                            </div>
+                            <div class="info-section">
+                                <h4 class="titulo-secao">Como posso ajudar</h4>
+                                <p class="descricao-ajuda"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dados dos profissionais
+        const profissionais = {
+            'Dra. Ana Silva': {
+                especialidade: 'Psicóloga',
+                avaliacao: 4.8,
+                imagem: '/img-medicos/1.png',
+                formacao: [
+                    'Doutorado em Psicologia Clínica - USP',
+                    'Mestrado em Psicologia do Desenvolvimento - UNESP',
+                    'Graduação em Psicologia - PUC-SP'
+                ],
+                especialidades: [
+                    'Terapia Cognitivo-Comportamental',
+                    'Ansiedade e Depressão',
+                    'Desenvolvimento Pessoal',
+                    'Relacionamentos'
+                ],
+                ajuda: 'Especialista em ajudar pessoas a superarem desafios emocionais e desenvolverem uma mentalidade mais positiva. Trabalho com técnicas modernas de terapia para auxiliar no tratamento de ansiedade, depressão e desenvolvimento pessoal.'
+            },
+            'Dr. Carlos Santos': {
+                especialidade: 'Psiquiatra',
+                avaliacao: 4.9,
+                imagem: '/img-medicos/2.png',
+                formacao: [
+                    'Doutorado em Psiquiatria - UNIFESP',
+                    'Residência Médica em Psiquiatria - Hospital das Clínicas',
+                    'Graduação em Medicina - UFMG'
+                ],
+                especialidades: [
+                    'Transtornos de Ansiedade',
+                    'Depressão',
+                    'TDAH',
+                    'Transtornos do Humor'
+                ],
+                ajuda: 'Médico psiquiatra com foco em diagnóstico e tratamento de transtornos mentais. Ofereço uma abordagem integrada, combinando tratamento medicamentoso com orientações terapêuticas para melhor qualidade de vida.'
+            },
+            'Dra. Mariana Costa': {
+                especialidade: 'Terapeuta',
+                avaliacao: 4.7,
+                imagem: '/img-medicos/3.png',
+                formacao: [
+                    'Especialização em Terapia Familiar - PUC-RJ',
+                    'Formação em Terapia Sistêmica',
+                    'Graduação em Psicologia - UFRJ'
+                ],
+                especialidades: [
+                    'Terapia Familiar',
+                    'Mediação de Conflitos',
+                    'Desenvolvimento de Habilidades Sociais',
+                    'Aconselhamento'
+                ],
+                ajuda: 'Especialista em terapia familiar e relacionamentos. Ajudo indivíduos e famílias a melhorarem suas relações interpessoais e desenvolverem habilidades de comunicação mais efetivas.'
+            },
+            'Dr. Pedro Oliveira': {
+                especialidade: 'Psicólogo',
+                avaliacao: 4.9,
+                imagem: '/img-medicos/4.png',
+                formacao: [
+                    'Mestrado em Psicologia Social - UFSC',
+                    'Especialização em Psicologia Organizacional',
+                    'Graduação em Psicologia - UFPR'
+                ],
+                especialidades: [
+                    'Psicologia Organizacional',
+                    'Desenvolvimento Profissional',
+                    'Gestão de Estresse',
+                    'Coaching'
+                ],
+                ajuda: 'Foco em desenvolvimento profissional e gestão de estresse no ambiente de trabalho. Ajudo pessoas a encontrarem equilíbrio entre vida pessoal e profissional, além de desenvolverem suas habilidades profissionais.'
+            },
+            'Dra. Juliana Lima': {
+                especialidade: 'Psiquiatra',
+                avaliacao: 4.8,
+                imagem: '/img-medicos/6.png',
+                formacao: [
+                    'Doutorado em Psiquiatria - UFRGS',
+                    'Especialização em Psiquiatria Infantil',
+                    'Graduação em Medicina - UFRJ'
+                ],
+                especialidades: [
+                    'Psiquiatria Infantil',
+                    'Transtornos do Desenvolvimento',
+                    'Ansiedade Infantil',
+                    'TDAH'
+                ],
+                ajuda: 'Especialista em saúde mental infantil e adolescente. Ofereço suporte especializado para crianças e jovens, trabalhando em conjunto com famílias e escolas para promover o desenvolvimento saudável.'
+            },
+            'Dr. Rafael Souza': {
+                especialidade: 'Terapeuta',
+                avaliacao: 4.7,
+                imagem: '/img-medicos/5.png',
+                formacao: [
+                    'Especialização em Terapia de Casal',
+                    'Formação em Terapia Breve',
+                    'Graduação em Psicologia - UFMG'
+                ],
+                especialidades: [
+                    'Terapia de Casal',
+                    'Terapia Breve',
+                    'Resolução de Conflitos',
+                    'Desenvolvimento Pessoal'
+                ],
+                ajuda: 'Especialista em terapia de casal e desenvolvimento pessoal. Ajudo casais a fortalecerem seus relacionamentos e indivíduos a desenvolverem seu potencial pessoal através de técnicas de terapia breve e eficaz.'
+            }
+        };
+
+        function verMaisInfo(nome, especialidade) {
+            const profissional = profissionais[nome];
+            if (!profissional) return;
+
+            // Atualizar informações do modal
+            document.querySelector('.nome-profissional').textContent = nome;
+            document.querySelector('.especialidade-profissional').textContent = especialidade;
+            document.querySelector('.avaliacao-modal').innerHTML = `
+                <div class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-star text-warning me-2"></i>
+                    <span class="fw-bold">${profissional.avaliacao}</span>
+                </div>
+            `;
+
+            // Atualizar imagem
+            const modalImg = document.querySelector('.foto-profissional-modal');
+            modalImg.src = profissional.imagem;
+            modalImg.alt = nome;
+
+            // Formação
+            const formacaoLista = document.querySelector('.formacao-lista');
+            formacaoLista.innerHTML = profissional.formacao.map(item => `<li>${item}</li>`).join('');
+
+            // Especialidades
+            const especialidadesLista = document.querySelector('.especialidades-lista');
+            especialidadesLista.innerHTML = profissional.especialidades.map(item => `<li>${item}</li>`).join('');
+
+            // Como posso ajudar
+            document.querySelector('.descricao-ajuda').textContent = profissional.ajuda;
+
+            // Mostrar o modal
+            const modal = new bootstrap.Modal(document.getElementById('modalProfissional'));
+            modal.show();
+        }
+    </script>
+</body>
+</html>

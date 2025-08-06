@@ -1,0 +1,201 @@
+.secao-principal {
+    background: linear-gradient(to bottom right, #232F3E, #37475A);
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    padding: 5rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+.secao-principal h1 {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    animation: slideFromLeft 1s ease-out forwards;
+    opacity: 0;
+}
+.secao-principal h1 .destaque {
+    background: linear-gradient(90deg, #ffffff, #78d6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Estilo para o texto de descrição */
+.secao-principal p {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    animation: slideFromBottom 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+/* Container flexível para os botões */
+.botoes-principais {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: slideFromBottom 1s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+/* Botão primário estilizado */
+.botoes-principais .btn-primary {
+    color: #ffffff;
+    background-color: #3498db;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoes-principais .btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+}
+
+/* Botão outline estilizado */
+.botoes-principais .btn-outline-primary {
+    color: #3498db;
+    border: 2px solid #3498db;
+    background-color: transparent;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoes-principais .btn-outline-primary:hover {
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+/* Ícones nos botões */
+.botoes-principais .btn i {
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+/* -------------- NOVO ESTILO SIMPLIFICADO PARA IMAGEM -------------- */
+
+/* Configuração base da imagem simples */
+.imagem-simples {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    opacity: 0;
+    animation: fadeInSimple 1s ease-out forwards, suaveFlutuacao 6s ease-in-out infinite;
+}
+
+.imagem-simples img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Animação simples de aparecimento */
+@keyframes fadeInSimple {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de flutuação suave */
+@keyframes suaveFlutuacao {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animação de entrada deslizando da esquerda */
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animação de entrada deslizando de baixo */
+@keyframes slideFromBottom {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .secao-principal {
+        padding: 4rem 0;
+        min-height: auto;
+    }
+    
+    .imagem-simples {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .secao-principal h1 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+    
+    .botoes-principais {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .botoes-principais .btn {
+        width: 100%;
+    }
+    
+    .imagem-simples {
+        margin-top: 2.5rem;
+    }
+}
+
+/* Otimização para dispositivos de tela pequena */
+@media (max-width: 576px) {
+    .secao-principal {
+        padding: 3rem 0;
+    }
+}

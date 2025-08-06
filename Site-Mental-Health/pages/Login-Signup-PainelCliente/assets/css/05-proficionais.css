@@ -1,0 +1,297 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+.navbar{
+    background: #f0f0f0; 
+}
+.gradient-text {
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Estilos para os Cards de Profissionais */
+.container-profissionais {
+    padding: 2rem 0;
+    background: #f8f9fa;
+}
+
+.card-profissional {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.card-profissional:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    border-color: #4CAF50;
+}
+
+.imagem-profissional {
+    position: relative;
+    height: 200px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.foto-profissional {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.3s ease;
+}
+
+.card-profissional:hover .foto-profissional {
+    transform: scale(1.05);
+}
+
+.placeholder-profissional {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-profissional i {
+    font-size: 3rem;
+    color: white;
+}
+
+.avaliacao {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffd700;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 1;
+}
+
+.informacoes-profissional {
+    padding: 1.5rem;
+    color: #2c3e50;
+}
+
+.informacoes-profissional h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.especialidade {
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+.experiencia {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.botao-info {
+    width: 100%;
+    padding: 0.8rem;
+    background: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botao-info:hover {
+    transform: translateY(-2px);
+    background: #45a049;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Responsividade para os cards de profissionais */
+@media (max-width: 768px) {
+    .card-profissional {
+        margin-bottom: 1.5rem;
+    }
+    
+    .imagem-profissional {
+        height: 180px;
+    }
+    
+    .placeholder-profissional {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .placeholder-profissional i {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .imagem-profissional {
+        height: 160px;
+    }
+    
+    .placeholder-profissional {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .placeholder-profissional i {
+        font-size: 2rem;
+    }
+    
+    .informacoes-profissional {
+        padding: 1rem;
+    }
+    
+    .informacoes-profissional h4 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Estilos do Modal */
+.modal-content {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    padding: 1.5rem 1.5rem 0;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.imagem-profissional-modal {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 3px solid #4CAF50;
+}
+
+.foto-profissional-modal {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.nome-profissional {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.especialidade-profissional {
+    color: #4CAF50;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.avaliacao-modal {
+    font-size: 1.1rem;
+}
+
+.titulo-secao {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #4CAF50;
+}
+
+.formacao-lista,
+.especialidades-lista {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.formacao-lista li,
+.especialidades-lista li {
+    padding: 0.5rem 0;
+    color: #2c3e50;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.formacao-lista li:before,
+.especialidades-lista li:before {
+    content: "•";
+    color: #4CAF50;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.descricao-ajuda {
+    color: #2c3e50;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Responsividade do Modal */
+@media (max-width: 768px) {
+    .modal-dialog {
+        margin: 1rem;
+    }
+    
+    .imagem-profissional-modal {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .imagem-profissional-modal .placeholder-profissional {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .imagem-profissional-modal .placeholder-profissional i {
+        font-size: 3rem;
+    }
+    
+    .nome-profissional {
+        font-size: 1.3rem;
+    }
+    
+    .especialidade-profissional {
+        font-size: 1rem;
+    }
+}

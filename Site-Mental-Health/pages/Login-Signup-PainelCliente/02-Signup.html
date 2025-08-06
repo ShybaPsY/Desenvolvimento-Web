@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/01-Login-Signup-RecupSen.css">
+    <link rel="icon" type="image/x-icon" href="/assets/img/pixel_heart.png">
+    <title>Cadastrar-se - MentePositiva</title>
+    <style>
+        /* Estilos adicionais para melhor espaçamento e feedback */
+        .form {
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 2rem; /* Ajuste o padding se necessário */
+        }
+        .form-header h1::after {
+            left: 0; /* Alinha a barra com o início do título */
+            transform: none;
+        }
+        .invalid-feedback {
+            display: none; /* Oculta por padrão */
+            width: 100%;
+            margin-top: .25rem;
+            font-size: .875em;
+            color: #dc3545;
+        }
+        /* Exibe feedback para inputs inválidos após validação */
+        .was-validated .form-control:invalid, .form-control.is-invalid {
+             border-color: #dc3545;
+        }
+        .was-validated .form-control:invalid ~ .invalid-feedback,
+        .form-control.is-invalid ~ .invalid-feedback {
+            display: block;
+        }
+         /* Exibe feedback para checkboxes inválidos após validação */
+        .was-validated .form-check-input:invalid, .form-check-input.is-invalid {
+             border-color: #dc3545; /* Pode não ser visível dependendo do estilo do checkbox */
+        }
+        .was-validated .form-check-input:invalid ~ .form-check-label {
+             color: #dc3545;
+        }
+        .was-validated .form-check-input:invalid ~ .form-check-label + .invalid-feedback,
+        .form-check-input.is-invalid ~ .form-check-label + .invalid-feedback {
+             display: block;
+        }
+         /* Estilos para inputs válidos */
+        .was-validated .form-control:valid, .form-control.is-valid {
+            border-color: #198754;
+        }
+        .was-validated .form-check-input:valid, .form-check-input.is-valid {
+             /* Pode adicionar um estilo sutil se desejado */
+        }
+        .was-validated .form-check-input:valid ~ .form-check-label {
+             color: #198754;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image d-none d-lg-flex">
+            <img src="assets/img/undraw_mindfulness_v3lv.svg" alt="Mindfulness Illustration">
+        </div>
+        <div class="form">
+            <!-- Adicionado novalidate para desabilitar validação HTML5 padrão e usar JS -->
+            <form id="signupForm" class="needs-validation" novalidate>
+                <div class="form-header mb-4">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                </div>
+
+                <h5 class="mb-3">Dados Pessoais</h5>
+                <div class="row mb-3">
+                    <div class="col-md-12 mb-3">
+                        <label for="fullname" class="form-label">Nome Completo <span class="text-danger">*</span></label>
+                        <input id="fullname" type="text" name="fullname" class="form-control" placeholder="Digite seu nome completo" required>
+                        <div class="invalid-feedback">Por favor, informe seu nome completo.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">E-mail <span class="text-danger">*</span></label>
+                        <input id="email" type="email" name="email" class="form-control" placeholder="Digite seu e-mail" required>
+                        <div class="invalid-feedback">Por favor, informe um e-mail válido.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="mobile" class="form-label">Celular <span class="text-danger">*</span></label>
+                        <input id="mobile" type="tel" name="mobile" class="form-control" placeholder="(xx) xxxxx-xxxx" required>
+                        <div class="invalid-feedback">Por favor, informe um número de celular válido.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="cpf" class="form-label">CPF <span class="text-danger">*</span></label>
+                        <input id="cpf" type="text" name="cpf" class="form-control" placeholder="000.000.000-00" required>
+                        <div class="invalid-feedback">Por favor, informe um CPF válido.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="birthdate" class="form-label">Data de Nascimento <span class="text-danger">*</span></label>
+                        <input id="birthdate" type="text" name="birthdate" class="form-control" placeholder="DD/MM/AAAA" required>
+                        <div class="invalid-feedback">Por favor, informe uma data de nascimento válida (anterior a hoje).</div>
+                    </div>
+                     <div class="col-md-6 mb-3">
+                        <label for="phone" class="form-label">Telefone Fixo</label>
+                        <input id="phone" type="tel" name="phone" class="form-control" placeholder="(xx) xxxx-xxxx">
+                        <div class="invalid-feedback">Por favor, informe um telefone fixo válido.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Gênero</label>
+                        <select id="gender" name="gender" class="form-select">
+                            <option value="">Selecione...</option>
+                            <option value="female">Feminino</option>
+                            <option value="male">Masculino</option>
+                            <option value="other">Outro</option>
+                            <option value="prefer_not_say">Prefiro não dizer</option>
+                        </select>
+                        <!-- Não obrigatório, sem feedback de inválido -->
+                    </div>
+                </div>
+
+                <h5 class="mb-3">Endereço</h5>
+                <div class="row mb-3">
+                    <div class="col-md-4 mb-3">
+                        <label for="cep" class="form-label">CEP <span class="text-danger">*</span></label>
+                        <input id="cep" type="text" name="cep" class="form-control" placeholder="00000-000" required>
+                        <div class="invalid-feedback">Por favor, informe um CEP válido.</div>
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label for="address" class="form-label">Logradouro <span class="text-danger">*</span></label>
+                        <input id="address" type="text" name="address" class="form-control" placeholder="Rua, Avenida, etc." required>
+                         <div class="invalid-feedback">Por favor, informe o logradouro.</div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="number" class="form-label">Número <span class="text-danger">*</span></label>
+                        <input id="number" type="text" name="number" class="form-control" placeholder="Ex: 123" required>
+                        <div class="invalid-feedback">Por favor, informe o número.</div>
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label for="complement" class="form-label">Complemento</label>
+                        <input id="complement" type="text" name="complement" class="form-control" placeholder="Apto, Bloco, Casa, etc.">
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <label for="neighborhood" class="form-label">Bairro <span class="text-danger">*</span></label>
+                        <input id="neighborhood" type="text" name="neighborhood" class="form-control" placeholder="Seu bairro" required>
+                        <div class="invalid-feedback">Por favor, informe o bairro.</div>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <label for="city" class="form-label">Cidade <span class="text-danger">*</span></label>
+                        <input id="city" type="text" name="city" class="form-control" placeholder="Sua cidade" required>
+                        <div class="invalid-feedback">Por favor, informe a cidade.</div>
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <label for="state" class="form-label">Estado <span class="text-danger">*</span></label>
+                        <select id="state" name="state" class="form-select" required>
+                            <option value="">UF</option>
+                            <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option><option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option><option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+                        </select>
+                        <div class="invalid-feedback">Selecione o estado.</div>
+                    </div>
+                </div>
+
+                <h5 class="mb-3">Informações Adicionais</h5>
+                 <div class="row mb-3">
+                    <div class="col-md-6 mb-3">
+                        <label for="profession" class="form-label">Profissão</label>
+                        <input id="profession" type="text" name="profession" class="form-control" placeholder="Sua profissão">
+                    </div>
+                     <div class="col-md-6 mb-3">
+                        <label for="how_found" class="form-label">Como nos conheceu?</label>
+                        <select id="how_found" name="how_found" class="form-select">
+                            <option value="">Selecione...</option>
+                            <option value="social_media">Redes Sociais</option>
+                            <option value="friends">Indicação de amigos</option>
+                            <option value="search_engine">Buscador (Google, etc.)</option>
+                            <option value="advertisement">Anúncio</option>
+                            <option value="other">Outro</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="description" class="form-label">Descrição Breve <span class="text-danger">*</span></label>
+                        <textarea id="description" name="description" class="form-control" rows="3" placeholder="Fale um pouco sobre o motivo do seu contato (mínimo 10 caracteres)" required></textarea>
+                        <div class="invalid-feedback">Por favor, escreva uma breve descrição (mínimo 10 caracteres).</div>
+                    </div>
+                     <div class="col-md-12 mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="communications" name="communications">
+                            <label class="form-check-label" for="communications">
+                                Aceito receber comunicações e novidades por e-mail.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="mb-3">Contato de Emergência</h5>
+                 <div class="row mb-3">
+                    <div class="col-md-6 mb-3">
+                        <label for="emergency_contact_name" class="form-label">Nome</label>
+                        <input id="emergency_contact_name" type="text" name="emergency_contact_name" class="form-control" placeholder="Nome do contato">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="emergency_contact_phone" class="form-label">Telefone</label>
+                        <input id="emergency_contact_phone" type="tel" name="emergency_contact_phone" class="form-control" placeholder="(xx) xxxxx-xxxx">
+                         <div class="invalid-feedback">Por favor, informe um telefone válido.</div>
+                    </div>
+                </div>
+
+                <h5 class="mb-3">Senha e Termos</h5>
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-3">
+                        <label for="password" class="form-label">Senha <span class="text-danger">*</span></label>
+                        <input id="password" type="password" name="password" class="form-control" placeholder="Crie uma senha (mín. 6 caracteres)" required>
+                        <div class="invalid-feedback">A senha deve ter no mínimo 6 caracteres.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="confirmPassword" class="form-label">Confirme sua Senha <span class="text-danger">*</span></label>
+                        <input id="confirmPassword" type="password" name="confirmPassword" class="form-control" placeholder="Digite sua senha novamente" required>
+                        <div class="invalid-feedback">As senhas não coincidem.</div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="terms" name="terms" required>
+                            <label class="form-check-label" for="terms">
+                                Li e aceito os <a href="#" target="_blank">Termos de Uso</a> e a <a href="#" target="_blank">Política de Privacidade</a>. <span class="text-danger">*</span>
+                            </label>
+                             <div class="invalid-feedback">Você deve aceitar os termos para continuar.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" id="btn-cadastro" class="btn btn-primary w-100">Cadastrar</button>
+                    <a href="01-login.html" id="btn-login" class="btn btn-secondary w-100 mt-2">Voltar ao login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- VanillaMasker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
+    <!-- Seu script de validação -->
+    <script src="./assets/js/Signup.js"></script>
+</body>
+
+</html>

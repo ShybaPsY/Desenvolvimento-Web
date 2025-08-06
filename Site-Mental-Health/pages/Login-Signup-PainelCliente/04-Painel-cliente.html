@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - MentePositiva</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/02-Painel-cliente.css">
+</head>
+<body>
+    <!-- Cabeçalho original mantido -->
+    <header class="bg-white border-bottom shadow-sm">
+        <nav class="navbar navbar-expand-lg py-2">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/Main-index.html" class="text-decoration-none text-dark">
+                        <h1 class="fs-2 fw-bold mb-0">Mente<span class="gradient-text">Positiva</span></h1>
+                    </a>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <div class="text-center my-5 py-4">
+            <h1 class="titulo-pagina mb-3">Minha Conta</h1>
+            <p class="subtitulo-pagina fs-5">Gerencie suas informações e preferências de forma simples e segura</p>
+        </div>
+        
+        <div class="grid-cartoes mb-5">
+            <!-- Meu Cadastro -->
+            <div class="cartao-conta p-4 d-flex flex-column justify-content-center align-items-center text-center" onclick="window.location.href='05-cadastro.html'">
+                <div class="icone-cartao icone-perfil d-flex align-items-center justify-content-center mb-3">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 class="titulo-cartao mb-2">Meu Cadastro</h3>
+                <p class="descricao-cartao mb-0">Visualize e edite suas informações pessoais</p>
+            </div>
+            
+            <!-- Trocar Senha -->
+            <div class="cartao-conta p-4 d-flex flex-column justify-content-center align-items-center text-center" onclick="window.location.href='06-trocarSenha.html'">
+                <div class="icone-cartao icone-senha d-flex align-items-center justify-content-center mb-3">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3 class="titulo-cartao mb-2">Trocar Senha</h3>
+                <p class="descricao-cartao mb-0">Altere sua senha para manter sua conta segura</p>
+            </div>
+            
+            <!-- Profissionais -->
+            <div class="cartao-conta p-4 d-flex flex-column justify-content-center align-items-center text-center position-relative" onclick="window.location.href='07-proficionais.html'">
+                <div class="icone-cartao icone-profissionais d-flex align-items-center justify-content-center mb-3">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <h3 class="titulo-cartao mb-2">Profissionais</h3>
+                <p class="descricao-cartao mb-0">Encontre e conecte-se com especialistas</p>
+                <span class="badge-notificacao d-flex align-items-center justify-content-center">6</span>
+            </div>
+            
+            <!-- Meu Endereço -->
+            <div class="cartao-conta p-4 d-flex flex-column justify-content-center align-items-center text-center" onclick="window.location.href='08-meuEndereco.html'">
+                <div class="icone-cartao icone-endereco d-flex align-items-center justify-content-center mb-3">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="titulo-cartao mb-2">Meu Endereço</h3>
+                <p class="descricao-cartao mb-0">Gerencie seus endereços cadastrados</p>
+            </div>
+
+            <!-- Consultas -->
+            <div class="cartao-conta p-4 d-flex flex-column justify-content-center align-items-center text-center" onclick="window.location.href='09-consulta.html'">
+                <div class="icone-cartao icone-consulta d-flex align-items-center justify-content-center mb-3">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3 class="titulo-cartao mb-2">Consultas</h3>
+                <p class="descricao-cartao mb-0">Agende e acompanhe suas consultas</p>
+            </div>
+            
+            <!-- Sair -->
+            <div class="cartao-conta p-4 d-flex flex-column justify-content-center align-items-center text-center" onclick="sair()">
+                <div class="icone-cartao icone-sair d-flex align-items-center justify-content-center mb-3">
+                    <i class="fas fa-sign-out-alt"></i>
+                </div>
+                <h3 class="titulo-cartao mb-2">Sair</h3>
+                <p class="descricao-cartao mb-0">Encerrar sessão com segurança</p>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Verificar se o usuário está logado ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificação de login comentada para visualização
+            // const estaLogado = localStorage.getItem('loggedIn');
+            // const emailUsuario = localStorage.getItem('userEmail');
+            
+            // if (!estaLogado || estaLogado !== 'true') {
+            //     window.location.href = 'index.html';
+            // }
+        });
+        
+        function sair() {
+            if(confirm('Tem certeza que deseja sair?')) {
+                // Limpar as informações de login
+                // localStorage.removeItem('loggedIn');
+                // localStorage.removeItem('userEmail');
+                
+                // Redirecionar para a página de login
+                alert('Logout realizado com sucesso!');
+                // window.location.href = 'index.html';
+            }
+        }
+
+        // Adicionar efeito de onda nos cartões
+        document.querySelectorAll('.cartao-conta').forEach(cartao => {
+            cartao.addEventListener('click', function(e) {
+                const onda = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const tamanho = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - tamanho / 2;
+                const y = e.clientY - rect.top - tamanho / 2;
+                
+                onda.style.width = onda.style.height = tamanho + 'px';
+                onda.style.left = x + 'px';
+                onda.style.top = y + 'px';
+                onda.classList.add('efeito-onda');
+                
+                this.appendChild(onda);
+                
+                setTimeout(() => {
+                    onda.remove();
+                }, 600);
+            });
+        });
+    </script>
+</body>
+</html>

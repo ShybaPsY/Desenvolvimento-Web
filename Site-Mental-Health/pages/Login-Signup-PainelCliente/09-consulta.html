@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mente Positiva - Painel do Cliente</title>
+    
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat:400,600" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="assets/css/07-consulta.css">
+</head>
+<body>
+    
+    <div class="altura-minima-tela fundo-cinza-50">
+        <!-- Cabeçalho -->
+        <header class="bg-white border-bottom shadow-sm">
+        <nav class="navbar navbar-expand-lg py-2">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/Main-index.html" class="text-decoration-none text-dark">
+                        <h1 class="fs-2 fw-bold mb-0">Mente<span class="gradient-text">Positiva</span></h1>
+                    </a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold text-dark px-3 py-2 me-3" href="04-Painel-cliente.html">
+                                Painel de Cliente
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold text-dark px-3 py-2" href="/Site-Mental-Health/Main-index.html">
+                                Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+        <!-- Conteúdo Principal -->
+        <main class="container mx-auto px-4 py-5">
+            <div class="row g-4">
+                <!-- Card do Perfil -->
+                <div class="col-lg-4">
+                    <div class="bg-white arredondado-4 sombra-lg overflow-hidden altura-ajustada">
+                        <div class="cabecalho-perfil text-center text-white p-4">
+                            <div class="position-relative d-inline-block mb-3">
+                                <div class="avatar-perfil">
+                                    JS
+                                </div>
+                                <div class="icone-editar-perfil">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                            </div>
+                            <h3 class="fs-5 fw-bold mb-1">João Silva</h3>
+                            <p class="small opacity-75 mb-0">joao.silva@email.com</p>
+                        </div>
+                        <div class="p-4">
+                            <div class="informacoes-perfil">
+                                <div class="item-informacao">
+                                    <i class="fas fa-id-card"></i>
+                                    <span>123.456.789-00</span>
+                                </div>
+                                <div class="item-informacao">
+                                    <i class="fas fa-address-card"></i>
+                                    <span>12.345.678-9</span>
+                                </div>
+                                <div class="item-informacao">
+                                    <i class="fas fa-lock"></i>
+                                    <span>••••••••</span>
+                                </div>
+                                <div class="item-informacao">
+                                    <i class="fas fa-phone"></i>
+                                    <span>(11) 98765-4321</span>
+                                </div>
+                                <div class="item-informacao">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>15/05/1990</span>
+                                </div>
+                                <div class="item-informacao">
+                                    <i class="fas fa-home"></i>
+                                    <span>Rua das Flores, 123</span>
+                                </div>
+                                <div class="item-informacao">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>São Paulo, SP</span>
+                                </div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <button class="botao-editar-perfil">
+                                    Editar Perfil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabela de Consultas Agendadas -->
+                <div class="col-lg-8 bloco-consultas">
+                    <div class="bg-white arredondado-4 sombra-lg overflow-hidden">
+                        <div class="p-4 border-bottom">
+                            <h2 class="fs-4 fw-bold text-dark mb-2">Consultas Agendadas</h2>
+                            <p class="text-muted mb-0">Gerencie suas consultas marcadas</p>
+                        </div>
+                        
+                        <div class="p-4">
+                            <div id="container-consultas">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width: 50px;">
+                                                    <input type="checkbox" id="selecionarTodas" class="form-check-input">
+                                                </th>
+                                                <th>Profissional</th>
+                                                <th>Data/Hora</th>
+                                                <th>Status</th>
+                                                <th style="width: 80px;">Ação</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="corpoTabelaConsultas">
+                                            <!-- Consultas serão inseridas aqui pelo JavaScript -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="mt-3">
+                                    <button id="excluirSelecionadas" class="botao-excluir-selecionadas">
+                                        Cancelar Selecionadas
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div id="nenhumaConsulta" class="text-center py-5" style="display: none;">
+                                <i class="fas fa-calendar-times text-muted" style="font-size: 3rem;"></i>
+                                <p class="text-muted mt-3">Nenhuma consulta agendada</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Seção Marcar Nova Consulta -->
+        <section class="secao-agendar-consulta py-5">
+            <div class="container">
+                <h2 class="text-center mb-2 fw-bold text-dark">Marcar Nova Consulta</h2>
+                <p class="text-center mb-5 text-muted">Escolha um dos nossos especialistas para sua próxima consulta</p>
+                
+                <!-- Filtros -->
+                <div class="bg-white p-4 rounded-3 shadow-sm mb-5">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <select id="filtroEspecialidade" class="form-select">
+                                <option value="">Todas Especialidades</option>
+                                <option value="Psicologia">Psicologia</option>
+                                <option value="Fisioterapia">Fisioterapia</option>
+                                <option value="Nutrição">Nutrição</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select id="filtroDisponibilidade" class="form-select">
+                                <option value="">Qualquer Disponibilidade</option>
+                                <option value="hoje">Hoje</option>
+                                <option value="semana">Esta Semana</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <button id="limparFiltros" class="btn btn-secondary w-100">Limpar Filtros</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profissionais -->
+                <div id="containerProfissionais" class="row g-4">
+                    <!-- Profissionais serão inseridos aqui pelo JavaScript -->
+                </div>
+
+                <!-- Mensagem quando não encontrar profissionais -->
+                <div id="nenhumProfissional" class="text-center py-5" style="display: none;">
+                    <i class="fas fa-user-md text-muted" style="font-size: 3rem;"></i>
+                    <p class="text-muted mt-3">Nenhum profissional encontrado com os filtros selecionados</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal de Agendamento -->
+    <div class="modal fade" id="modalAgendamento" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agendar Consulta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="informacoes-profissional-agendamento mb-4">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <div class="icone-doutor-modal">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h4 id="nomeProfissionalModal" class="fw-bold mb-1">Nome do Profissional</h4>
+                                <p id="especialidadeProfissionalModal" class="text-primary mb-0">Especialidade</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formulario-agendamento">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Tipo de Consulta</label>
+                            <select id="tipoConsulta" class="form-select">
+                                <option value="online">Consulta Online</option>
+                                <option value="presencial">Consulta Presencial</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Selecione a Data</label>
+                            <div class="seletor-data">
+                                <div class="opcao-data selected" data-data="12">
+                                    <div class="dia">Seg</div>
+                                    <div class="data">12</div>
+                                    <div class="mes">Mai</div>
+                                </div>
+                                <div class="opcao-data" data-data="13">
+                                    <div class="dia">Ter</div>
+                                    <div class="data">13</div>
+                                    <div class="mes">Mai</div>
+                                </div>
+                                <div class="opcao-data" data-data="14">
+                                    <div class="dia">Qua</div>
+                                    <div class="data">14</div>
+                                    <div class="mes">Mai</div>
+                                </div>
+                                <div class="opcao-data" data-data="15">
+                                    <div class="dia">Qui</div>
+                                    <div class="data">15</div>
+                                    <div class="mes">Mai</div>
+                                </div>
+                                <div class="opcao-data" data-data="16">
+                                    <div class="dia">Sex</div>
+                                    <div class="data">16</div>
+                                    <div class="mes">Mai</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Selecione o Horário</label>
+                            <div class="seletor-horario">
+                                <div class="opcao-horario" data-horario="09:00">09:00</div>
+                                <div class="opcao-horario" data-horario="10:30">10:30</div>
+                                <div class="opcao-horario selected" data-horario="14:00">14:00</div>
+                                <div class="opcao-horario" data-horario="15:30">15:30</div>
+                                <div class="opcao-horario" data-horario="17:00">17:00</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Motivo da Consulta</label>
+                            <textarea class="form-control" rows="3" placeholder="Descreva brevemente o motivo da sua consulta"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="botao-confirmar" onclick="confirmarAgendamento()">Confirmar Agendamento</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div class="modal fade" id="modalConfirmacao" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <div class="icone-sucesso mb-4">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="fw-bold mb-2">Agendamento Confirmado!</h3>
+                    <p class="text-muted mb-4">Sua consulta foi agendada com sucesso.</p>
+                    <div class="detalhes-confirmacao">
+                        <p><strong>Profissional:</strong> <span id="nomeProfissionalConfirmacao"></span></p>
+                        <p><strong>Data:</strong> <span id="dataConfirmacao"></span> Mai, 2025</p>
+                        <p><strong>Horário:</strong> <span id="horarioConfirmacao"></span></p>
+                        <p><strong>Tipo:</strong> <span id="tipoConsultaConfirmacao"></span></p>
+                    </div>
+                    <button type="button" class="botao-confirmar mt-3" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/consulta.js"></script>
+</body>
+</html>

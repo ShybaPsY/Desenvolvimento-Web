@@ -1,0 +1,485 @@
+
+:root {
+    --primary-color: #3b82f6;
+    --primary-light: #60a5fa;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #f7edd5;
+    --light-color: #ffffff;
+    --dark-color: #333333;
+    --gray-color: #f8f9fa;
+    --text-color: #444;
+    --border-color: #e6e6e6;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.altura-minima-tela {
+    min-height: 100vh;
+}
+
+.fundo-cinza-50 {
+    background-color: #f9fafb;
+}
+
+.borda-inferior {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.borda-cinza-200 {
+    border-color: #e5e7eb;
+}
+
+.sombra-sm {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.arredondado-4 {
+    border-radius: 1rem;
+}
+
+.sombra-lg {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+}
+
+.altura-ajustada {
+    height: fit-content;
+}
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+.navbar{
+    background: #f0f0f0; 
+}
+.gradient-text {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ========================================
+   BLOCO DE PERFIL
+======================================== */
+.cabecalho-perfil {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    padding: 1.5rem;
+}
+
+.avatar-perfil {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.icone-editar-perfil {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icone-editar-perfil i {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+}
+
+.informacoes-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+
+.item-informacao {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.item-informacao i {
+    width: 2rem;
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+.item-informacao span {
+    font-size: 1rem;
+}
+
+.botao-editar-perfil {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.botao-editar-perfil:hover {
+    background-color: var(--primary-dark);
+}
+
+/* ========================================
+   BLOCO CONSULTAS AGENDADAS
+======================================== */
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+.table-light {
+    background-color: #f8f9fa;
+}
+
+.form-check-input {
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+}
+
+.badge-status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-confirmado {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.status-agendada {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* Botões da tabela - ESTILO PERSONALIZADO DA LIXEIRA */
+.botao-cancelar {
+    background-color: white;
+    border: 2px solid #dc3545;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.botao-cancelar i {
+    color: #dc3545;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.botao-cancelar:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.botao-cancelar:hover i {
+    color: white;
+}
+
+.botao-excluir-selecionadas {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.botao-excluir-selecionadas:hover {
+    background-color: var(--primary-dark);
+}
+
+/* ========================================
+   MARCAR NOVA CONSULTA
+======================================== */
+.secao-agendar-consulta {
+    background-color: #f8f9fa;
+}
+
+.card-profissional {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s;
+}
+
+.card-profissional:hover {
+    transform: translateY(-0.5rem);
+}
+
+.imagem-profissional {
+    position: relative;
+    height: 15rem;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.imagem-profissional-verde {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.imagem-profissional-roxo {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.foto-profissional {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.placeholder-profissional {
+    color: white;
+    font-size: 3.75rem;
+}
+
+.avaliacao {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    background: white;
+    color: #3b82f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.avaliacao i {
+    color: #fbbf24;
+    margin-right: 0.25rem;
+}
+
+.informacoes-profissional {
+    padding: 1.5rem;
+}
+
+.especialidade {
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.experiencia {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.proxima-disponibilidade {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    display: inline-block;
+}
+
+.botao-agendar {
+    width: 100%;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.botao-agendar:hover {
+    background-color: #1d4ed8;
+}
+/* ========================================
+   MODAIS, JANELA DE MARCAR CONSULTA E A JANELA DE CONFIRMAÇÃO
+======================================== */
+.icone-doutor-modal {
+    width: 5rem;
+    height: 5rem;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone-doutor-modal i {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.seletor-data,
+.seletor-horario {
+    display: flex;
+    gap: 0.625rem;
+    flex-wrap: wrap;
+    margin-top: 0.625rem;
+}
+
+.opcao-data,
+.opcao-horario {
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    padding: 0.9375rem;
+    text-align: center;
+    cursor: pointer;
+    flex: 1 0 calc(20% - 0.625rem);
+    transition: all 0.3s;
+}
+
+.opcao-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.opcao-data .dia {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.3125rem;
+}
+
+.opcao-data .data {
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin-bottom: 0.3125rem;
+    color: var(--dark-color);
+}
+
+.opcao-data .mes {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.opcao-data.selected,
+.opcao-horario.selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.opcao-data.selected .data,
+.opcao-data.selected .mes {
+    color: white;
+}
+
+.opcao-horario {
+    padding: 0.9375rem 0.625rem;
+    font-weight: 600;
+}
+
+.icone-sucesso {
+    font-size: 3.75rem;
+    color: var(--success-color);
+}
+
+.botao-confirmar {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.625rem 1.875rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao-confirmar:hover {
+    background-color: var(--primary-dark);
+}
+
+.detalhes-confirmacao {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+.detalhes-confirmacao p {
+    margin-bottom: 0.25rem;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+@media (max-width: 991px) {
+    .opcao-data,
+    .opcao-horario {
+        flex: 1 0 calc(33.33% - 0.625rem);
+    }
+}
+
+@media (max-width: 767px) {
+    .opcao-data,
+    .opcao-horario {
+        flex: 1 0 calc(50% - 0.625rem);
+    }
+    
+    .card-profissional {
+        margin-bottom: 1.25rem;
+    }
+}
